@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature _shared/cost-tracking` で生成) |
+| 001 | 001__shared_cost-tracking_SPEC.md | SPEC | 設計済 | 2026-06-20 | 積算+.env単価+概算+無料枠アラート(§4.6.2) |
+| 002 | 002__shared_cost-tracking_PLAN.md | PLAN | 設計済 | 2026-06-20 | pricing→record→aggregate→alert |
+| 003 | 003__shared_cost-tracking_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | 閾値アラート/単価未設定 |
+| 004 | (E2E スキップ) | — | n/a | — | cross-cutting |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
@@ -23,7 +26,7 @@
 - 実装コード: §1.4 参照
 
 ## 機能性質タグ
-- (まだ未確定。`/flow:feature` 実行時に決定)
+- cross-cutting, analytics（コスト積算）
 
 <!-- auto-generated-end -->
 
