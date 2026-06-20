@@ -7,9 +7,21 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["vitest/globals"],
+    "types": [
+      "vitest/globals"
+    ],
     "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "jsx": "react-jsx"
   },
-  "include": ["src", "db", "api", "tests"]
+  "include": [
+    "src",
+    "db",
+    "api",
+    "tests"
+  ]
 }
