@@ -84,4 +84,21 @@
     SCENARIO Phase 1.5 デザインシステムに対応。concept の提供価値/世界観からデザイン SoT を導出。
     Class A（SoT 生成 + 基盤適用、ローカル headless）。デザイン方向は creative judgment のため
     design 内部で基盤+1画面スパイク承認（1-decision）を取る。
+
+- id: D20260620-027
+  timestamp: 2026-06-20T09:18:00+09:00
+  command: /flow:auto
+  phase: Step 3.0a / 反復4 auto-pick（bootstrap step 3 first feature）+ §4.5.2a heavy 検知
+  question: 反復4 の next-step
+  options:
+    - "/flow:feature _shared/db (Phase 2、優先度1 基盤)"
+  recommended: /flow:feature _shared/db
+  chosen: /flow:feature _shared/db
+  chosen_type: auto-recommended
+  depends_on: [D20260620-024]
+  context: |
+    反復3 で design SoT 完了（適用 deferred）→ Phase 1.5 完了。bootstrap §3.0a step 3: 未設計の機能を
+    concept §1.3 優先度順で設計。優先度1 の基盤 = _shared/db から。Class A。
+    §4.5.2a heavy 検知（完了 sub-skill 4 / 生成ファイル 50+）→ .flow-needs-compact marker 書込 + 継続
+    （context heavy は停止条件でない、§4.5.2b）。
 ```

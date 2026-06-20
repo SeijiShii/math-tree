@@ -23,7 +23,7 @@
 ## 横断フォルダ
 | 優先度 | フォルダ | 状態 | 設計完了 | INDEX |
 |---|---|---|---|---|
-| 1 | [_shared/db](./_shared/db/) | 設計待ち | ❌ | [INDEX](./_shared/db/INDEX.md) |
+| 1 | [_shared/db](./_shared/db/) | 設計済 | 2026-06-20 | [INDEX](./_shared/db/INDEX.md) |
 | 1 | [_shared/types](./_shared/types/) | 設計待ち | ❌ | [INDEX](./_shared/types/INDEX.md) |
 | 1 | [_shared/ui](./_shared/ui/) | 設計待ち | ❌ | [INDEX](./_shared/ui/INDEX.md) |
 | 1 | [_shared/ai](./_shared/ai/) | 設計待ち | ❌ | [INDEX](./_shared/ai/INDEX.md) |
