@@ -11,7 +11,10 @@ Claude API クライアント基盤（キー秘匿）+ 生成/レビュー呼び
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature _shared/ai` で生成) |
+| 001 | 001__shared_ai_SPEC.md | SPEC | 設計済 | 2026-06-20 | Claude クライアント(server-only)+多段検証+コストログ |
+| 002 | 002__shared_ai_PLAN.md | PLAN | 設計済 | 2026-06-20 | interface→mock→検証→実SDK inject |
+| 003 | 003__shared_ai_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | PII scrub(SEC-003)/異モデル不一致 |
+| 004 | (E2E スキップ) | — | n/a | — | cross-cutting |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
@@ -23,7 +26,7 @@ Claude API クライアント基盤（キー秘匿）+ 生成/レビュー呼び
 - 実装コード: §1.4 参照
 
 ## 機能性質タグ
-- (まだ未確定。`/flow:feature` 実行時に決定)
+- cross-cutting, server-only, analytics（コストログ）
 
 <!-- auto-generated-end -->
 

@@ -26,7 +26,7 @@
 | 1 | [_shared/db](./_shared/db/) | 設計済 | 2026-06-20 | [INDEX](./_shared/db/INDEX.md) |
 | 1 | [_shared/types](./_shared/types/) | 設計済 | 2026-06-20 | [INDEX](./_shared/types/INDEX.md) |
 | 1 | [_shared/ui](./_shared/ui/) | 設計済 | 2026-06-20 | [INDEX](./_shared/ui/INDEX.md) |
-| 1 | [_shared/ai](./_shared/ai/) | 設計待ち | ❌ | [INDEX](./_shared/ai/INDEX.md) |
+| 1 | [_shared/ai](./_shared/ai/) | 設計済 | 2026-06-20 | [INDEX](./_shared/ai/INDEX.md) |
 | 1 | [_shared/legal](./_shared/legal/) | 設計待ち | ❌ | [INDEX](./_shared/legal/INDEX.md) |
 | 2 | [_shared/auth](./_shared/auth/) | 設計待ち | ❌ | [INDEX](./_shared/auth/INDEX.md) |
 | 2 | [_shared/cost-tracking](./_shared/cost-tracking/) | 設計待ち | ❌ | [INDEX](./_shared/cost-tracking/INDEX.md) |
