@@ -17,7 +17,7 @@
 | 3 | ✅ | [learning-workbook](./learning-workbook/) | 設計済 | 2026-06-20 | 0 | 0 | 0 | [INDEX](./learning-workbook/INDEX.md) |
 | 3 | ❌ | [curriculum-generation](./curriculum-generation/) | 設計済 | 2026-06-20 | 0 | 0 | 0 | [INDEX](./curriculum-generation/INDEX.md) |
 | 3 | ❌ | [feedback](./feedback/) | 設計済 | 2026-06-20 | 0 | 0 | 0 | [INDEX](./feedback/INDEX.md) |
-| 4 | ✅ | [tech-tree](./tech-tree/) | 設計待ち | ❌ | 0 | 0 | 0 | [INDEX](./tech-tree/INDEX.md) |
+| 4 | ✅ | [tech-tree](./tech-tree/) | 設計済 | 2026-06-20 | 0 | 0 | 0 | [INDEX](./tech-tree/INDEX.md) |
 | 4 | ❌ | [support](./support/) | 設計待ち | ❌ | 0 | 0 | 0 | [INDEX](./support/INDEX.md) |
 
 ## 横断フォルダ

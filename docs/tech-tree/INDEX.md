@@ -11,7 +11,10 @@ React Flow 知識グラフ + 周辺フォーカス + ミニマップ + アンロ
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature tech-tree` で生成) |
+| 001 | 001_tech-tree_SPEC.md | SPEC | 設計済 | 2026-06-20 | React Flow グラフ+周辺フォーカス+ミニマップ+豆知識 |
+| 002 | 002_tech-tree_PLAN.md | PLAN | 設計済 | 2026-06-20 | api 組成→View/Node/MiniMap→DetailPanel |
+| 003 | 003_tech-tree_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | 状態色(design §2.1)/アンロック/SEC-001 |
+| 004 | 004_tech-tree_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-20 | 眺める→学ぶ→アンロック |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
@@ -23,7 +26,7 @@ React Flow 知識グラフ + 周辺フォーカス + ミニマップ + アンロ
 - 実装コード: §1.4 参照
 
 ## 機能性質タグ
-- (まだ未確定。`/flow:feature` 実行時に決定)
+- feature, auth-required(owner), stateful
 
 <!-- auto-generated-end -->
 
