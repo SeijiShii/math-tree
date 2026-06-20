@@ -1,8 +1,8 @@
 # AI_LOG インデックス — math-relax
 
 **最終更新**: 2026-06-20 08:45 (+09:00)
-**総セッション数**: 25
-**総 decision 数**: 51
+**総セッション数**: 26
+**総 decision 数**: 52
 
 > このフォルダは AI 主導の自走 / 後追いトレースを目的とする詳細ログ。
 > セッションごとに 1 ファイル、append-only、過去ファイルは削除・編集禁止。
@@ -25,6 +25,7 @@
 | [D20260620_010_feature__shared_legal.md](./D20260620_010_feature__shared_legal.md) | 2026-06-20 | /flow:feature | _shared/legal | D20260620-034 | 完了 |
 | [D20260620_009_feature__shared_ai.md](./D20260620_009_feature__shared_ai.md) | 2026-06-20 | /flow:feature | _shared/ai | D20260620-033 | 完了 |
 | [D20260620_008_feature__shared_ui.md](./D20260620_008_feature__shared_ui.md) | 2026-06-20 | /flow:feature | _shared/ui | D20260620-032 | 完了 |
+| [D20260620_026_tdd__shared_cost-tracking.md](./D20260620_026_tdd__shared_cost-tracking.md) | 2026-06-20 | /flow:tdd | _shared/cost-tracking | D20260620-052 | 完了 |
 | [D20260620_025_tdd__shared_auth.md](./D20260620_025_tdd__shared_auth.md) | 2026-06-20 | /flow:tdd | _shared/auth | D20260620-051 | 完了 |
 | [D20260620_024_tdd__shared_legal.md](./D20260620_024_tdd__shared_legal.md) | 2026-06-20 | /flow:tdd | _shared/legal | D20260620-050 | 完了 |
 | [D20260620_023_tdd__shared_ai.md](./D20260620_023_tdd__shared_ai.md) | 2026-06-20 | /flow:tdd | _shared/ai | D20260620-049 | 完了 |
