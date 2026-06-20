@@ -6,15 +6,21 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",
+    "@xyflow/react": "^12.11.0",
     "drizzle-orm": "^0.36.4",
     "katex": "^0.16.47",
     "mathjs": "^13.2.3",
+    "mathlive": "^0.105.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.4"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.2.13",
@@ -23,8 +29,10 @@
     "@types/katex": "^0.16.8",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
     "jsdom": "^25.0.1",
     "typescript": "^5.6.3",
+    "vite": "^5.4.21",
     "vitest": "^2.1.5"
   }
 }
