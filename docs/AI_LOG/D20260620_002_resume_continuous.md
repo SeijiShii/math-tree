@@ -4,8 +4,8 @@
 **コマンド**: /flow:auto（continuous loop, auto-pick + auto-invoke）
 **対象**: プロジェクト next-step ルーティング
 **実行者**: Claude (Opus 4.8) + seiji
-**状態**: 進行中
-**含まれる decision**: D20260620-013 〜
+**状態**: 中断（Phase 2 完了チェックポイント、Phase 3 実装着手前で人間判断を仰ぐ）
+**含まれる decision**: D20260620-013 〜 D20260620-043
 **ファイル**: `D20260620_002_resume_continuous.md`
 
 ---
@@ -117,3 +117,23 @@
     反復4 で _shared/db 設計済。優先度1 の残り基盤（types/ui/ai/legal）を順次設計。
     次は _shared/types（依存なし、共通型）。Class A。停止条件非該当のため継続（§4.5.2b）。
 ```
+
+- id: D20260620-043
+  timestamp: 2026-06-20T10:18:00+09:00
+  command: /flow:auto
+  phase: Phase 2 完了チェックポイント / Phase 3 着手前
+  question: Phase 3（実装/tdd）にこのまま進むか、人間判断を仰ぐか
+  options:
+    - Phase 3 実装へ自走継続
+    - Phase 2 完了で人間判断を仰ぐ (チェックポイント)
+  recommended: Phase 2 完了で人間判断を仰ぐ
+  chosen: チェックポイント（loop 一旦中断、SCENARIO カーソルから再開可能）
+  chosen_type: explicit-choice
+  depends_on: [D20260620-042, D20260620-037, D20260620-038]
+  context: |
+    反復5-16 で全 13 フォルダ設計完了（Phase 2）+ refined 見積。Phase 3 実装は real Node プロジェクト
+    scaffold（package.json/deps install/vitest）+ 全コードベース構築という別モードの大規模作業。
+    かつ最複雑 2 モジュール（learning-workbook / curriculum-generation）は open 論点
+    [論点-LW1] CAS 同値判定 / [論点-CG1] 多段検証 の方式確定（Class C, seiji 判断推奨）が実装をゲートする。
+    → ここで status を surface し人間判断を仰ぐ。loop は SCENARIO §5 カーソル（Phase 3 着手前）から
+    /flow:auto or /flow:tdd で再開可能。全成果物は commit 済（durable）。
