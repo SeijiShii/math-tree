@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+# env / secrets (O25)
+.env
+.env.local
+.env*.local
+# build
+dist/
+.vercel/
+# os
+.DS_Store
+# exports (収益/コストエクスポート、版管理外)
+exports/

@@ -1,0 +1,48 @@
+# AI_LOG インデックス — math-relax
+
+**最終更新**: 2026-06-20 08:45 (+09:00)
+**総セッション数**: 1
+**総 decision 数**: 12
+
+> このフォルダは AI 主導の自走 / 後追いトレースを目的とする詳細ログ。
+> セッションごとに 1 ファイル、append-only、過去ファイルは削除・編集禁止。
+> 人間向けサマリは `../concept.md` §7 決定事項ログ を参照。
+
+<!-- auto-generated-start -->
+
+## セッション一覧（新しい順）
+
+| ファイル | 実行日 | コマンド | 対象 | decision 範囲 | 状態 |
+|---|---|---|---|---|---|
+| [D20260620_001_concept_initial.md](./D20260620_001_concept_initial.md) | 2026-06-20 | /flow:concept | initial | D20260620-001〜012 | 完了 |
+
+## decision_id 索引（grep 用、新しい順）
+
+| ID | command | phase | chosen (短縮) | type | ファイル |
+|---|---|---|---|---|---|
+| D20260620-008 | /flow:concept | Step 3 論点抽出 | [論点-001][論点-002] | open | D20260620_001_concept_initial.md |
+| D20260620-007 | /flow:concept | Step 2 規模/NFR | 小規模 / 無料枠 $0 / 正確性最優先 | auto-recommended | D20260620_001_concept_initial.md |
+| D20260620-006 | /flow:concept | Step 2 Q12.7(1) | Clerk 匿名ゲスト→段階認証 | auto-recommended | D20260620_001_concept_initial.md |
+| D20260620-005 | /flow:concept | Step 2 復習 | SRS は MVP 除外 | auto-recommended | D20260620_001_concept_initial.md |
+| D20260620-004 | /flow:concept | Step 2 グラフ見せ方 | 周辺フォーカス + ミニマップ | auto-recommended | D20260620_001_concept_initial.md |
+| D20260620-003 | /flow:concept | Step 2 MVP 範囲 | 中学数学 1 系統の縦スライス | auto-recommended | D20260620_001_concept_initial.md |
+| D20260620-002 | /flow:concept | Step 2 AI 生成方式 | AI 生成 + 多段クロス検証 | explicit-choice | D20260620_001_concept_initial.md |
+| D20260620-001 | /flow:concept | Step 1.7 preferences | 標準 Neon スタック | auto-recommended | D20260620_001_concept_initial.md |
+
+## Open 論点（chosen_type=open、全期間横断）
+
+| ID | 論点タイトル | 採番セッション | 関連 decision |
+|---|---|---|---|
+| 論点-001 | AI 多段クロス検証パイプラインの具体設計 | D20260620_001 | D20260620-002 |
+| 論点-002 | 数式ステップの同値判定（自己採点の照合ロジック） | D20260620_001 | D20260620-002 |
+
+## Superseded chain（旧 Open → 新解決）
+
+| 旧 ID | 新 ID | 解決日 | 解決セッション |
+|---|---|---|---|
+| (なし) | | | |
+
+<!-- auto-generated-end -->
+
+<!-- user-edit-start -->
+<!-- user-edit-end -->
