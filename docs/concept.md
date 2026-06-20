@@ -149,6 +149,18 @@ scripts/                    # dev.sh / 生成バッチ起動 / コスト集計
 | 運用・監視 | Sentry（Free）でエラー監視。外部 API コストを自前積算（§4.6.2） | 無料枠超過の手前で気づく |
 | スケール上限 | DAU 〜100 想定。超過時は §4.3 代替候補へ切替判断 | 個人ツール無料枠厳守 |
 
+<!-- auto-generated-start -->
+### 3.X セキュリティ要件（auto-added by /flow:secure 2026-06-20）
+
+L1 設計レビュー（`SECURITY_REVIEW_20260620.md`）で High と判定された項目を要件化（accepted-as-requirement）:
+
+- **認可（O23, SEC-001）**: progress / support / feedback の全 API は、認証主体（Clerk ゲスト/ユーザー）の owner に紐づくデータのみ操作可能に強制する（owner resolver / Drizzle query を owner_id でフィルタ）。他人の進捗が見える/書ける状態を作らない。
+- **入力検証（O24, SEC-002）**: API 入力を Zod スキーマで一元検証。KaTeX は `trust:false, strict:true` でレンダリング（任意 LaTeX コマンド実行を防ぐ）。feedback 自由記述・**AI 生成テキスト（豆知識/問題/模範解答）も信頼境界外として表示時に sanitize/エスケープ**する。
+- **PII ログ漏洩（O26, SEC-003, 法令必須）**: Sentry `beforeSend` で email/位置/本文中 PII をマスク。feedback ingestion 前の PII scrub を必須化（§6 既出の実装担保）。
+- **DSR 履行（O54, SEC-004, 法令必須）**: 匿名ゲストは運営側で本人特定不可のため、**in-app セルフサービスで「全データ削除」を実動作**させる（delete endpoint + DB cascade purge）。開示は in-app で自分の全進捗/支援/フィードバックを閲覧できることで履行。運用者向け identify/delete ツールは作らない（匿名で incoherent）。§9.1 の約束と実装を一致させる。
+- **秘密情報（O25, SEC-006, 対応済）**: Claude/Stripe/Clerk のシークレットは Vercel Functions に秘匿（`VITE_*` に置かない）。`.env*.local` は .gitignore 除外済み。
+<!-- auto-generated-end -->
+
 ## 4. 全体アーキテクチャ
 
 ```
@@ -404,6 +416,56 @@ scripts/                    # dev.sh / 生成バッチ起動 / コスト集計
 - **推奨**: 案 C（CAS 優先 + AI フォールバック）。理由: 大半は CAS で決定的に正解判定でき低コスト、難しいケースのみ AI に回してコストと精度を両立。
 - **判断期限**: learning-workbook の feature 設計前
 - **担当**: seiji
+
+### [論点-003] [SEC-001] 認可漏れ（所有者チェック）: High
+- **status**: `accepted-as-requirement`
+- **status 履歴**: 2026-06-20 open → 2026-06-20 accepted-as-requirement（/flow:secure --scope=concept で §3.X 要件化）
+- **影響範囲**: §3 NFR, §5, §6, tech-tree / learning-workbook / support / feedback
+- **観点 ID**: O23_authorization_check
+- **検出根拠**: 複数ユーザー PJ だが API の所有者チェック/認可マトリクスが concept 未明示
+- **推奨**: 全 API を owner resolver で認証主体のデータのみに絞る（§3.X 要件化済み）
+- **判断期限**: 各 feature 設計前
+- **L1 レポート**: `./SECURITY_REVIEW_20260620.md#sec-001`
+
+### [論点-004] [SEC-002] 入力検証（XSS/sanitize）: High
+- **status**: `accepted-as-requirement`
+- **status 履歴**: 2026-06-20 open → 2026-06-20 accepted-as-requirement
+- **影響範囲**: §3 NFR, §5, §6, learning-workbook / feedback / curriculum-generation 表示層
+- **観点 ID**: O24_input_validation
+- **検出根拠**: MathLive/LaTeX・feedback 自由記述・AI 生成表示の sanitize / 入力スキーマが未明示
+- **推奨**: Zod 入力検証 + KaTeX `trust:false` + AI 生成/feedback の表示時 sanitize（§3.X 要件化済み）
+- **判断期限**: learning-workbook / feedback 設計前
+- **L1 レポート**: `./SECURITY_REVIEW_20260620.md#sec-002`
+
+### [論点-005] [SEC-003] PII ログ漏洩: High（法令必須）
+- **status**: `accepted-as-requirement`
+- **status 履歴**: 2026-06-20 open → 2026-06-20 accepted-as-requirement
+- **影響範囲**: §3 NFR, §9.1, §9.2, feedback / 監視（Sentry）
+- **観点 ID**: O26_pii_logging
+- **検出根拠**: feedback PII scrub は明示だが Sentry beforeSend マスクが未明示（部分対応）
+- **推奨**: Sentry beforeSend マスク + feedback ingestion 前 PII scrub 必須化（§3.X 要件化済み）
+- **判断期限**: feedback / 監視設計前
+- **L1 レポート**: `./SECURITY_REVIEW_20260620.md#sec-003`
+
+### [論点-006] [SEC-004] DSR 履行可能性: High（法令必須）
+- **status**: `accepted-as-requirement`
+- **status 履歴**: 2026-06-20 open → 2026-06-20 accepted-as-requirement
+- **影響範囲**: §1.1 UC, §5 データ設計（cascade/purge）, §9 法務, _shared/auth / account
+- **観点 ID**: O54_dsr_fulfillment_operability
+- **検出根拠**: §9.1 でセルフサービス削除を約束、in-app 実削除 + 全ストア purge の実装担保が未確定
+- **推奨**: in-app「全データ削除」セルフサービス（delete endpoint + cascade purge）+ 開示=in-app 閲覧。運用者ツールは作らない（§3.X 要件化済み）
+- **判断期限**: _shared/auth / account 設計前
+- **L1 レポート**: `./SECURITY_REVIEW_20260620.md#sec-004`
+
+### [論点-007] [SEC-005] レート制限: Medium
+- **status**: `open`
+- **影響範囲**: §3 NFR, §4.3, §4.6.2, support / feedback / progress API
+- **観点 ID**: O27_rate_limit_scope
+- **検出根拠**: AI コスト爆発は事前生成で緩和済みだが、一般書き込み API のレート制限が未設計
+- **候補案**: 案 A 書き込み API に Upstash Ratelimit + Turnstile 二重防御 ／ 案 B feature 実装時に Vercel Edge で対応
+- **推奨**: 案 A（feature 設計時に確定）
+- **判断期限**: support / feedback feature 設計時
+- **L1 レポート**: `./SECURITY_REVIEW_20260620.md#sec-005`
 
 ## 9. 法務・コンプライアンス書類
 
