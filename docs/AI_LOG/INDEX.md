@@ -1,8 +1,8 @@
 # AI_LOG インデックス — math-relax
 
 **最終更新**: 2026-06-20 08:45 (+09:00)
-**総セッション数**: 10
-**総 decision 数**: 33
+**総セッション数**: 11
+**総 decision 数**: 34
 
 > このフォルダは AI 主導の自走 / 後追いトレースを目的とする詳細ログ。
 > セッションごとに 1 ファイル、append-only、過去ファイルは削除・編集禁止。
@@ -14,6 +14,7 @@
 
 | ファイル | 実行日 | コマンド | 対象 | decision 範囲 | 状態 |
 |---|---|---|---|---|---|
+| [D20260620_011_feature__shared_auth.md](./D20260620_011_feature__shared_auth.md) | 2026-06-20 | /flow:feature | _shared/auth | D20260620-035 | 完了 |
 | [D20260620_010_feature__shared_legal.md](./D20260620_010_feature__shared_legal.md) | 2026-06-20 | /flow:feature | _shared/legal | D20260620-034 | 完了 |
 | [D20260620_009_feature__shared_ai.md](./D20260620_009_feature__shared_ai.md) | 2026-06-20 | /flow:feature | _shared/ai | D20260620-033 | 完了 |
 | [D20260620_008_feature__shared_ui.md](./D20260620_008_feature__shared_ui.md) | 2026-06-20 | /flow:feature | _shared/ui | D20260620-032 | 完了 |

@@ -11,7 +11,10 @@ Clerk 匿名ゲスト → 段階認証（O22）
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature _shared/auth` で生成) |
+| 001 | 001__shared_auth_SPEC.md | SPEC | 設計済 | 2026-06-20 | Clerk 匿名→段階認証+owner解決+DSR削除 |
+| 002 | 002__shared_auth_PLAN.md | PLAN | 設計済 | 2026-06-20 | owner→guest/link→delete→実SDK |
+| 003 | 003__shared_auth_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | 匿名→authed 200(P4.46)/delete(SEC-004) |
+| 004 | (E2E スキップ) | — | n/a | — | cross-cutting |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
@@ -23,7 +26,7 @@ Clerk 匿名ゲスト → 段階認証（O22）
 - 実装コード: §1.4 参照
 
 ## 機能性質タグ
-- (まだ未確定。`/flow:feature` 実行時に決定)
+- cross-cutting, auth-required（owner scoping, O22）
 
 <!-- auto-generated-end -->
 
