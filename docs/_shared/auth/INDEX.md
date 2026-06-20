@@ -14,6 +14,8 @@ Clerk 匿名ゲスト → 段階認証（O22）
 | 001 | 001__shared_auth_SPEC.md | SPEC | 設計済 | 2026-06-20 | Clerk 匿名→段階認証+owner解決+DSR削除 |
 | 002 | 002__shared_auth_PLAN.md | PLAN | 設計済 | 2026-06-20 | owner→guest/link→delete→実SDK |
 | 003 | 003__shared_auth_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | 匿名→authed 200(P4.46)/delete(SEC-004) |
+| 101 | 101__shared_auth_IMPL_REPORT.md | IMPL | 実装完了 | 2026-06-20 | 5/5 green, P4.46 充足 |
+| 102 | 102__shared_auth_UNIT_TEST_REPORT.md | TEST_REPORT | 実装完了 | 2026-06-20 | 100% |
 | 004 | (E2E スキップ) | — | n/a | — | cross-cutting |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
