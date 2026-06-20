@@ -2,8 +2,8 @@
 **実行日時**: 2026-06-20 18:20 (+09:00)
 **コマンド**: /flow:auto（continuous、再 invoke）
 **対象**: P4.46 Auth-impl gate（ゲスト認証の本番セッション経路 実コード未実装）
-**状態**: 進行中
-**含まれる decision**: D20260620-066 〜
+**状態**: 完了（P4.46 充足 → 次は P4.45 Wording gate = Class C 人間ゲートで pause）
+**含まれる decision**: D20260620-066 〜 D20260620-070
 
 ## Decisions
 ```yaml
@@ -78,3 +78,17 @@
     脆弱性解消: 旧実装は全 API が x-owner-id 信頼(fallback guest_anon=全員同一 owner / なりすまし・他人データ削除可)。
     Clerk 実 JWT 検証は computed specifier で未 install でも build 不破壊、release で @clerk/backend + 実キー注入時に有効化。
     残(release/Class C): GUEST_TOKEN_SECRET 生成 + .env、Clerk 実キー、匿名→authed 200 実機検証。
+
+- id: D20260620-070
+  command: /flow:auto
+  phase: 次反復評価 + drift シューティング
+  question: P4.46 充足後の next-step
+  chosen: SEC-001 status を実装済へ更新（drift shoot）→ P4.45 Wording gate（Class C）で 1-decision pause
+  chosen_type: auto-recommended
+  depends_on: [D20260620-069]
+  context: |
+    再評価: P1 SEC open なし / P2 中断なし / P4.2 fix・revise pending なし / P4.46 充足。
+    残 no-key Class A: E2E(P4.5)・Design 視覚(P4.4b) は browser-E2E tooling 未導入 = browser+DB 依存（prior と同様 deferred）。
+    P4.45 Wording gate: *_wording_* セッション皆無 = 未実行 → fire。コピー校正は human judgment(Class C) ゆえ
+    auto-execute せず提示 + 1-decision pause（auto-pick-policy §1.5.5b）。loop marker は保持（full stop でない）。
+    SEC-001 を accepted-as-requirement → 実装済（resolveOwner auth seam + withOwner）へ reconcile。

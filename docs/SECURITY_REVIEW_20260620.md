@@ -1,5 +1,5 @@
 <!-- auto-generated-start -->
-# 設計レベル脆弱性レビュー — math-relax（プロダクト全体）
+# 設計レベル脆弱性レビュー — Math-Tree（プロダクト全体）
 
 **レビュー日**: 2026-06-20
 **レビュー実施者**: Claude (Opus 4.8) + seiji
@@ -32,7 +32,7 @@
 - **不在根拠**: §5 で progress / support / feedback を guest/user_id で所有する設計はあるが、各 API エンドポイントでの所有者チェック（`owner_id = requester` の強制）や認可マトリクスが明示されていない。複数ユーザー PJ のため他人の進捗が見える/書けるリスク。
 - **PJ 性質との関連**: require=[複数ユーザー] 該当
 - **推奨対策**: 全 API（progress 取得/更新、support、feedback）で `withOwner` / owner resolver により認証主体の guest/user_id に紐づくデータのみ操作可能に強制。Neon + Drizzle では query を owner_id でフィルタ。匿名ゲストでも Clerk セッションの owner で絞る。
-- **route**: accepted-as-requirement（concept §3.X + §8 [論点-003]）
+- **route**: accepted-as-requirement → **実装済（2026-06-20, /flow:tdd _shared/auth）**。owner はサーバ検証済みの値のみ（旧 `x-owner-id` ヘッダ信頼 = なりすまし・全員 guest_anon 共有 を撤廃）。`resolveOwner`（auth seam）が Authorization Bearer を guest JWT 署名検証 / Clerk JWT 検証で解決し、`withOwner`/owner_id フィルタ（db/owner.ts）で全クエリを所有者強制。3 保護 handler（tech-tree/grade-step/account.delete）は未認証で 401。
 
 #### [SEC-002] 入力検証（XSS / sanitize） (O24_input_validation, severity=High)
 - **照合結果**: SPEC 未対応
