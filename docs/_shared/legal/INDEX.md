@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature _shared/legal` で生成) |
+| 001 | 001__shared_legal_SPEC.md | SPEC | 設計済 | 2026-06-20 | プラポリ/規約/特商法+DSR セルフ削除文言 |
+| 002 | 002__shared_legal_PLAN.md | PLAN | 設計済 | 2026-06-20 | 原稿→公開ページ→フッタ導線 |
+| 003 | 003__shared_legal_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | DSR 文言整合(SEC-004)/導線(O55) |
+| 004 | (E2E スキップ) | — | n/a | — | cross-cutting |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
@@ -23,7 +26,7 @@
 - 実装コード: §1.4 参照
 
 ## 機能性質タグ
-- (まだ未確定。`/flow:feature` 実行時に決定)
+- cross-cutting, i18n（将来）
 
 <!-- auto-generated-end -->
 
