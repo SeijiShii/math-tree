@@ -60,13 +60,13 @@
 ## 5. 現在地カーソル
 
 <!-- AUTO-GENERATED:BEGIN scenario-cursor -->
-- 現在フェーズ: Phase 1.5 (デザインシステム) → Phase 2 (機能設計) へ移行
-- 進行中ターゲット: design SoT 完了（適用+視覚レビューは画面実装後に deferred）
-- 最終更新セッション: D20260620_005_design_system
-- 最終更新時刻: 2026-06-20 09:15
-- 完了フェーズ: [Phase 1 概念設計（concept + secure + initial estimate）, Phase 1.5 デザイン SoT 生成]
-- 次の推奨コマンド: /flow:feature _shared/db （Phase 2 機能設計、優先度1 の基盤フォルダから）
-- 注記: Design gate(b)（画面実装後の視覚レビュー green）は Phase 3 実装後に再評価
+- 現在フェーズ: Phase 2 (機能設計) 完了 → Phase 3 (実装) 着手前
+- 進行中ターゲット: 全 13 フォルダ設計済（SPEC/PLAN/UNIT_TEST/E2E）+ initial/refined 見積完了
+- 最終更新セッション: D20260620_018_feature__shared_app-shell
+- 最終更新時刻: 2026-06-20 10:16
+- 完了フェーズ: [Phase 1 概念設計, Phase 1.5 デザイン SoT, Phase 2 機能設計(13/13)]
+- 次の推奨コマンド: /flow:tdd（Phase 3 実装、優先度順 _shared/db から。先に [論点-LW1]/[論点-CG1] 確定推奨）
+- 注記: Phase 3 着手前に各 feature の spec-review(P3.7) も評価対象。Design gate(b)(視覚レビュー)/wording は画面実装後
 <!-- AUTO-GENERATED:END scenario-cursor -->
 
 ## 6. 変更履歴

@@ -101,4 +101,19 @@
     concept §1.3 優先度順で設計。優先度1 の基盤 = _shared/db から。Class A。
     §4.5.2a heavy 検知（完了 sub-skill 4 / 生成ファイル 50+）→ .flow-needs-compact marker 書込 + 継続
     （context heavy は停止条件でない、§4.5.2b）。
+
+- id: D20260620-030
+  timestamp: 2026-06-20T09:25:00+09:00
+  command: /flow:auto
+  phase: Step 3.0a / 反復5 auto-pick（Phase 2 機能設計 継続）
+  question: 反復5 の next-step
+  options:
+    - "/flow:feature _shared/types (優先度1 基盤、依存なし)"
+  recommended: /flow:feature _shared/types
+  chosen: /flow:feature _shared/types
+  chosen_type: auto-recommended
+  depends_on: [D20260620-027]
+  context: |
+    反復4 で _shared/db 設計済。優先度1 の残り基盤（types/ui/ai/legal）を順次設計。
+    次は _shared/types（依存なし、共通型）。Class A。停止条件非該当のため継続（§4.5.2b）。
 ```
