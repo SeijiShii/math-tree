@@ -1,0 +1,10 @@
+{
+  "name": "math-relax",
+  "short_name": "math-relax",
+  "description": "テックツリーで学ぶ 数学学びなおし",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1729",
+  "theme_color": "#3b5bdb",
+  "icons": []
+}

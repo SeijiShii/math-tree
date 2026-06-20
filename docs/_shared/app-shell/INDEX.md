@@ -14,6 +14,8 @@
 | 001 | 001__shared_app-shell_SPEC.md | SPEC | 設計済 | 2026-06-20 | 合成ルート+API配線+認証確立+deploy scaffold(O57) |
 | 002 | 002__shared_app-shell_PLAN.md | PLAN | 設計済 | 2026-06-20 | 合成→API配線→scaffold→視覚/wording |
 | 003 | 003__shared_app-shell_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | 起動/ルーティング/匿名セッション(P4.46) |
+| 101 | 101__shared_app-shell_IMPL_REPORT.md | IMPL | 実装完了 | 2026-06-20 | 5/5 green |
+| 102 | 102__shared_app-shell_UNIT_TEST_REPORT.md | TEST_REPORT | 実装完了 | 2026-06-20 | 100% |
 | 004 | (E2E スキップ) | — | n/a | — | 合成 smoke は各 feature E2E + Playwright |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
