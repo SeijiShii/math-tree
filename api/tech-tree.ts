@@ -1,5 +1,5 @@
-import { db, ownerFrom, send401If } from '../_handler'
-import { buildTechTreeGraph } from '../../src/features/tech-tree/buildGraph'
+import { db, ownerFrom, send401If } from './_handler'
+import { buildTechTreeGraph } from '../src/features/tech-tree/buildGraph'
 export default async function handler(req: any, res: any) {
   let ownerId: string
   try {

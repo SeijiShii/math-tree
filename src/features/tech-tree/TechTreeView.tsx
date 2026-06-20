@@ -8,7 +8,7 @@ import { apiFetch } from "../../lib/api/client";
 export function TechTreeView() {
   const [graph, setGraph] = useState<TechTreeGraph>({ nodes: [], edges: [] });
   useEffect(() => {
-    apiFetch("/api/tech-tree/chugaku-1")
+    apiFetch("/api/tech-tree")
       .then((r) => r.json())
       .then(setGraph)
       .catch(() => {});
