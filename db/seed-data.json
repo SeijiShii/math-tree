@@ -1,0 +1,71 @@
+{
+  "systemicLine": "中1 数学",
+  "units": [
+    {
+      "slug": "seisu-no-keisan",
+      "title": "正負の数の計算",
+      "description": "正の数・負の数のたし算とかけ算。符号のルールに慣れよう。",
+      "trivia": "負の数は7世紀インドの数学者ブラフマグプタが「借金」を表すのに使い始めたと言われます。",
+      "isRomanceNode": false,
+      "problems": [
+        { "statementLatex": "(-3)+5", "steps": [
+          { "order": 0, "modelAnswerLatex": "2", "hint": "符号に注意して計算しよう。" }
+        ] }
+      ]
+    },
+    {
+      "slug": "moji-shiki",
+      "title": "文字式の計算",
+      "description": "同じ文字の項をまとめる。x が何個分かを数える感覚をつかもう。",
+      "trivia": "未知数に x を使う習慣は17世紀のデカルトが広めました。",
+      "isRomanceNode": false,
+      "problems": [
+        { "statementLatex": "3x+2x", "steps": [
+          { "order": 0, "modelAnswerLatex": "5x", "hint": "x の個数をたし合わせよう。" }
+        ] }
+      ]
+    },
+    {
+      "slug": "bunpai",
+      "title": "分配法則",
+      "description": "かっこの外の数を中のすべての項にかける。",
+      "trivia": "分配法則 a(b+c)=ab+ac は面積の考え方そのものです。",
+      "isRomanceNode": false,
+      "problems": [
+        { "statementLatex": "3(2x-1)", "steps": [
+          { "order": 0, "modelAnswerLatex": "6x-3", "hint": "3 を 2x と -1 の両方にかけよう。" }
+        ] }
+      ]
+    },
+    {
+      "slug": "ichiji-houteishiki",
+      "title": "一次方程式",
+      "description": "x の値を求める。2x+1=7 のとき x はいくつ？（値だけ入力）",
+      "trivia": "「方程式」という言葉は中国の数学書『九章算術』に由来します。",
+      "isRomanceNode": true,
+      "problems": [
+        { "statementLatex": "2x+1=7", "steps": [
+          { "order": 0, "modelAnswerLatex": "3", "hint": "両辺から 1 を引いて、2 で割ろう。x の値だけ入力してね。" }
+        ] }
+      ]
+    },
+    {
+      "slug": "tenkai",
+      "title": "式の展開",
+      "description": "(x+2)(x+1) のようなかっこの積を、ひとつの式に開く。",
+      "trivia": "展開と因数分解は逆の操作。行き来できると式が自由になります。",
+      "isRomanceNode": false,
+      "problems": [
+        { "statementLatex": "(x+2)(x+1)", "steps": [
+          { "order": 0, "modelAnswerLatex": "x^2+3x+2", "hint": "それぞれの項をすべてかけ合わせてまとめよう。" }
+        ] }
+      ]
+    }
+  ],
+  "edges": [
+    ["seisu-no-keisan", "moji-shiki"],
+    ["moji-shiki", "bunpai"],
+    ["bunpai", "ichiji-houteishiki"],
+    ["bunpai", "tenkai"]
+  ]
+}
