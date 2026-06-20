@@ -14,6 +14,8 @@
 | 001 | 001__shared_types_SPEC.md | SPEC | 設計済 | 2026-06-20 | enums/domain/graph/DTO 型、公開 DTO 封じ込め |
 | 002 | 002__shared_types_PLAN.md | PLAN | 設計済 | 2026-06-20 | src/types/ 5 ファイル |
 | 003 | 003__shared_types_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | 型テスト（模範解答/内部 F 封じ込め） |
+| 101 | 101__shared_types_IMPL_REPORT.md | IMPL | 実装完了 | 2026-06-20 | 4/4 green |
+| 102 | 102__shared_types_UNIT_TEST_REPORT.md | TEST_REPORT | 実装完了 | 2026-06-20 | 100% |
 | 004 | (E2E スキップ) | — | n/a | — | cross-cutting |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）

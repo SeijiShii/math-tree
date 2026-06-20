@@ -1,8 +1,8 @@
 # AI_LOG インデックス — math-relax
 
 **最終更新**: 2026-06-20 08:45 (+09:00)
-**総セッション数**: 20
-**総 decision 数**: 46
+**総セッション数**: 21
+**総 decision 数**: 47
 
 > このフォルダは AI 主導の自走 / 後追いトレースを目的とする詳細ログ。
 > セッションごとに 1 ファイル、append-only、過去ファイルは削除・編集禁止。
@@ -25,6 +25,7 @@
 | [D20260620_010_feature__shared_legal.md](./D20260620_010_feature__shared_legal.md) | 2026-06-20 | /flow:feature | _shared/legal | D20260620-034 | 完了 |
 | [D20260620_009_feature__shared_ai.md](./D20260620_009_feature__shared_ai.md) | 2026-06-20 | /flow:feature | _shared/ai | D20260620-033 | 完了 |
 | [D20260620_008_feature__shared_ui.md](./D20260620_008_feature__shared_ui.md) | 2026-06-20 | /flow:feature | _shared/ui | D20260620-032 | 完了 |
+| [D20260620_021_tdd__shared_types.md](./D20260620_021_tdd__shared_types.md) | 2026-06-20 | /flow:tdd | _shared/types | D20260620-047 | 完了 |
 | [D20260620_020_tdd__shared_db.md](./D20260620_020_tdd__shared_db.md) | 2026-06-20 | /flow:tdd | _shared/db | D20260620-046 | 完了 |
 | [D20260620_019_resume_continuous.md](./D20260620_019_resume_continuous.md) | 2026-06-20 | /flow:auto | continuous | D20260620-044〜045+ | 進行中 |
 | [D20260620_007_feature__shared_types.md](./D20260620_007_feature__shared_types.md) | 2026-06-20 | /flow:feature | _shared/types | D20260620-031 | 完了 |
