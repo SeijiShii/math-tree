@@ -66,4 +66,22 @@
     反復1 で secure 完了 → High 4 件 accepted-as-requirement で Critical/High 解決済。
     §3.0 estimate 1回目: concept 完成 + secure Critical/High 解決済 + initial estimate なし → 該当（最優先評価）。
     SCENARIO Phase 1 完了ゲートの「initial estimate 生成」を満たす。Class A。
+
+- id: D20260620-024
+  timestamp: 2026-06-20T09:10:00+09:00
+  command: /flow:auto
+  phase: Step 3.0a / 反復3 auto-pick（bootstrap step 2）
+  question: 反復3 の next-step
+  options:
+    - "/flow:design (design SoT、Phase 1.5 / P4.4 Design gate(a))"
+  recommended: /flow:design
+  chosen: /flow:design
+  chosen_type: auto-recommended
+  depends_on: [D20260620-022]
+  context: |
+    反復2 で estimate 完了 → Phase 1 完了（concept + secure + initial estimate）。
+    bootstrap §3.0a step 2: concept 確定 + design-system.md 不在 → /flow:design（P4.4 Design gate(a)）。
+    SCENARIO Phase 1.5 デザインシステムに対応。concept の提供価値/世界観からデザイン SoT を導出。
+    Class A（SoT 生成 + 基盤適用、ローカル headless）。デザイン方向は creative judgment のため
+    design 内部で基盤+1画面スパイク承認（1-decision）を取る。
 ```
