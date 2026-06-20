@@ -18,7 +18,7 @@
 | 3 | ❌ | [curriculum-generation](./curriculum-generation/) | 実装完了 | 2026-06-20 | 0 | 0 | 0 | [INDEX](./curriculum-generation/INDEX.md) |
 | 3 | ❌ | [feedback](./feedback/) | 実装完了 | 2026-06-20 | 0 | 0 | 0 | [INDEX](./feedback/INDEX.md) |
 | 4 | ✅ | [tech-tree](./tech-tree/) | 実装完了 | 2026-06-20 | 0 | 0 | 0 | [INDEX](./tech-tree/INDEX.md) |
-| 4 | ❌ | [support](./support/) | 設計済 | 2026-06-20 | 0 | 0 | 0 | [INDEX](./support/INDEX.md) |
+| 4 | ❌ | [support](./support/) | 実装完了 | 2026-06-20 | 0 | 0 | 0 | [INDEX](./support/INDEX.md) |
 
 ## 横断フォルダ
 | 優先度 | フォルダ | 状態 | 設計完了 | INDEX |

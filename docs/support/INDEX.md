@@ -15,6 +15,8 @@ tip-jar 100 円支援（Stripe 単発、ゲスト決済）
 | 002 | 002_support_PLAN.md | PLAN | 設計済 | 2026-06-20 | checkout/webhook→Button→実 Stripe |
 | 003 | 003_support_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | 署名検証/冪等/SEC-001 |
 | 004 | 004_support_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-20 | 支援ジャーニー(test) |
+| 101 | 101_support_IMPL_REPORT.md | IMPL | 実装完了 | 2026-06-20 | 4/4 green |
+| 102 | 102_support_UNIT_TEST_REPORT.md | TEST_REPORT | 実装完了 | 2026-06-20 | 100% |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
