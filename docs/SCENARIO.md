@@ -60,13 +60,13 @@
 ## 5. 現在地カーソル
 
 <!-- AUTO-GENERATED:BEGIN scenario-cursor -->
-- 現在フェーズ: Phase 2 (機能設計) 完了 → Phase 3 (実装) 着手前
-- 進行中ターゲット: 全 13 フォルダ設計済（SPEC/PLAN/UNIT_TEST/E2E）+ initial/refined 見積完了
-- 最終更新セッション: D20260620_018_feature__shared_app-shell
-- 最終更新時刻: 2026-06-20 10:16
-- 完了フェーズ: [Phase 1 概念設計, Phase 1.5 デザイン SoT, Phase 2 機能設計(13/13)]
-- 次の推奨コマンド: /flow:tdd（Phase 3 実装、優先度順 _shared/db から。先に [論点-LW1]/[論点-CG1] 確定推奨）
-- 注記: Phase 3 着手前に各 feature の spec-review(P3.7) も評価対象。Design gate(b)(視覚レビュー)/wording は画面実装後
+- 現在フェーズ: Phase 3 (実装) ロジック+presentation+api 完了 → Phase 4 (公開準備/release) 着手前
+- 進行中ターゲット: 全 13 モジュール実装完了（64 unit green + typecheck green + production build 成功）
+- 最終更新セッション: D20260620_034_tdd_api-wiring
+- 最終更新時刻: 2026-06-20 13:02
+- 完了フェーズ: [Phase 1, Phase 1.5 design SoT, Phase 2 機能設計, Phase 3 実装(ロジック/presentation/api)]
+- 次の推奨コマンド: /flow:release（実キー FILL: Neon/Clerk/Anthropic/Stripe → ローカル動作確認 → デプロイ）。Class C(実キー)+B(デプロイ) の人間ゲート
+- 注記: grade-step/support webhook は実キー(AI/Stripe) inject 待ちで 501。Design gate(b) 視覚レビュー + wording + E2E はブラウザ/実 DB で release 前後に実施
 <!-- AUTO-GENERATED:END scenario-cursor -->
 
 ## 6. 変更履歴
