@@ -14,6 +14,8 @@ DB スキーマ・マイグレーション（Neon + Drizzle）
 | 001 | 001__shared_db_SPEC.md | SPEC | 設計済 | 2026-06-20 | 9 テーブル + owner scoping/purge インターフェース |
 | 002 | 002__shared_db_PLAN.md | PLAN | 設計済 | 2026-06-20 | schema → client → owner ヘルパ → migration の 3 Phase |
 | 003 | 003__shared_db_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | owner 分離(SEC-001)/purge(SEC-004) 含む |
+| 101 | 101__shared_db_IMPL_REPORT.md | IMPL | 実装完了 | 2026-06-20 | 6/6 green + typecheck green |
+| 102 | 102__shared_db_UNIT_TEST_REPORT.md | TEST_REPORT | 実装完了 | 2026-06-20 | 100% 成功率 |
 | 004 | (E2E スキップ) | — | n/a | — | cross-cutting、統合テストは feature 側 E2E でカバー |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
