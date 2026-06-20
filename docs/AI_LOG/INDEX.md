@@ -2,7 +2,7 @@
 
 **最終更新**: 2026-06-20 08:45 (+09:00)
 **総セッション数**: 35
-**総 decision 数**: 63
+**総 decision 数**: 65
 
 > このフォルダは AI 主導の自走 / 後追いトレースを目的とする詳細ログ。
 > セッションごとに 1 ファイル、append-only、過去ファイルは削除・編集禁止。
@@ -25,7 +25,7 @@
 | [D20260620_010_feature__shared_legal.md](./D20260620_010_feature__shared_legal.md) | 2026-06-20 | /flow:feature | _shared/legal | D20260620-034 | 完了 |
 | [D20260620_009_feature__shared_ai.md](./D20260620_009_feature__shared_ai.md) | 2026-06-20 | /flow:feature | _shared/ai | D20260620-033 | 完了 |
 | [D20260620_008_feature__shared_ui.md](./D20260620_008_feature__shared_ui.md) | 2026-06-20 | /flow:feature | _shared/ui | D20260620-032 | 完了 |
-| [D20260620_035_resume_continuous.md](./D20260620_035_resume_continuous.md) | 2026-06-20 | /flow:auto | continuous | D20260620-062〜063+ | 進行中 |
+| [D20260620_035_resume_continuous.md](./D20260620_035_resume_continuous.md) | 2026-06-20 | /flow:auto | continuous | D20260620-062〜065 | 完了 |
 | [D20260620_034_tdd_api-wiring.md](./D20260620_034_tdd_api-wiring.md) | 2026-06-20 | /flow:tdd | api-wiring | D20260620-060 | 完了 |
 | [D20260620_033_tdd_presentation.md](./D20260620_033_tdd_presentation.md) | 2026-06-20 | /flow:tdd | presentation | D20260620-059 | 完了 |
 | [D20260620_032_tdd__shared_app-shell.md](./D20260620_032_tdd__shared_app-shell.md) | 2026-06-20 | /flow:tdd | _shared/app-shell | D20260620-058 | 完了 |
