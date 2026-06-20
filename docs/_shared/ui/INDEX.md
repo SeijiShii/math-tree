@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature _shared/ui` で生成) |
+| 001 | 001__shared_ui_SPEC.md | SPEC | 設計済 | 2026-06-20 | トークン+基本コンポーネント+Katex(trust:false)+SVG |
+| 002 | 002__shared_ui_PLAN.md | PLAN | 設計済 | 2026-06-20 | tailwind/tokens → 部品 → Katex/SVG |
+| 003 | 003__shared_ui_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | Katex trust(SEC-002)/Header 360px |
+| 004 | (E2E スキップ) | — | n/a | — | cross-cutting |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
@@ -23,7 +26,7 @@
 - 実装コード: §1.4 参照
 
 ## 機能性質タグ
-- (まだ未確定。`/flow:feature` 実行時に決定)
+- cross-cutting（デザイン基盤）
 
 <!-- auto-generated-end -->
 
