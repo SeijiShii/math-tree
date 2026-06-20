@@ -50,4 +50,20 @@
     secure 未実行のため SCENARIO Phase 1 順序（concept→secure→estimate）に従い secure が次。
     [論点-001] AI 多段クロス検証パイプライン = 本 PJ のトップリスク（数学的正確性、人手監修不在）を
     secure --scope=concept の設計レビューで評価する。Class A（auto-execute、無確認）。
+
+- id: D20260620-022
+  timestamp: 2026-06-20T09:00:00+09:00
+  command: /flow:auto
+  phase: Step 3.0 / 反復2 auto-pick（シナリオ・スケジュール activity 最優先評価）
+  question: 反復2 の next-step
+  options:
+    - "/flow:estimate (estimate 1回目、Phase1 完了ゲート)"
+  recommended: /flow:estimate
+  chosen: /flow:estimate
+  chosen_type: auto-recommended
+  depends_on: [D20260620-014]
+  context: |
+    反復1 で secure 完了 → High 4 件 accepted-as-requirement で Critical/High 解決済。
+    §3.0 estimate 1回目: concept 完成 + secure Critical/High 解決済 + initial estimate なし → 該当（最優先評価）。
+    SCENARIO Phase 1 完了ゲートの「initial estimate 生成」を満たす。Class A。
 ```
