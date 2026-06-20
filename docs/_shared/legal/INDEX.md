@@ -14,6 +14,8 @@
 | 001 | 001__shared_legal_SPEC.md | SPEC | 設計済 | 2026-06-20 | プラポリ/規約/特商法+DSR セルフ削除文言 |
 | 002 | 002__shared_legal_PLAN.md | PLAN | 設計済 | 2026-06-20 | 原稿→公開ページ→フッタ導線 |
 | 003 | 003__shared_legal_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-20 | DSR 文言整合(SEC-004)/導線(O55) |
+| 101 | 101__shared_legal_IMPL_REPORT.md | IMPL | 実装完了 | 2026-06-20 | 3/3 green |
+| 102 | 102__shared_legal_UNIT_TEST_REPORT.md | TEST_REPORT | 実装完了 | 2026-06-20 | 100% |
 | 004 | (E2E スキップ) | — | n/a | — | cross-cutting |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
