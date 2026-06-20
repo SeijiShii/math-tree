@@ -1,8 +1,8 @@
 # AI_LOG インデックス — math-relax
 
 **最終更新**: 2026-06-20 08:45 (+09:00)
-**総セッション数**: 16
-**総 decision 数**: 39
+**総セッション数**: 17
+**総 decision 数**: 40
 
 > このフォルダは AI 主導の自走 / 後追いトレースを目的とする詳細ログ。
 > セッションごとに 1 ファイル、append-only、過去ファイルは削除・編集禁止。
@@ -14,6 +14,7 @@
 
 | ファイル | 実行日 | コマンド | 対象 | decision 範囲 | 状態 |
 |---|---|---|---|---|---|
+| [D20260620_017_feature_support.md](./D20260620_017_feature_support.md) | 2026-06-20 | /flow:feature | support | D20260620-041 | 完了 |
 | [D20260620_016_feature_tech-tree.md](./D20260620_016_feature_tech-tree.md) | 2026-06-20 | /flow:feature | tech-tree | D20260620-040 | 完了 |
 | [D20260620_015_feature_feedback.md](./D20260620_015_feature_feedback.md) | 2026-06-20 | /flow:feature | feedback | D20260620-039 | 完了 |
 | [D20260620_014_feature_curriculum-generation.md](./D20260620_014_feature_curriculum-generation.md) | 2026-06-20 | /flow:feature | curriculum-generation | D20260620-038 | 完了 |
