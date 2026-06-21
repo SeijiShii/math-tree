@@ -2,7 +2,28 @@
 **実行日時**: 2026-06-21 (+09:00)
 **コマンド**: /flow:auto（continuous、再 invoke）
 **対象**: 未コミット branding rename の green commit → §3.0c release-pre 鮮度ゲート（audit full → secure）
-**状態**: 進行中（audit + O22 連携UI + Wording 完了 → Release 境界、no-key Class A 枯渇）
+**状態**: 進行中（release-pre 再検証 → /flow:release dispatch）
+
+## 追記 decision 4
+```yaml
+- id: D20260621-089
+  command: /flow:auto
+  phase: §3.0c release-pre 必須監査（auth UI delta 再検証）
+  question: P4.7 Release gate 前の audit→secure 鮮度
+  chosen: focused 再検証（auth UI delta）+ env-coverage fix → release dispatch
+  chosen_type: auto-recommended
+  context: |
+    AUDIT_20260621_1813 以降の delta = O22 auth UI（authProvider/authClient/AccountAuthSection/client.ts）
+    + wording copy。focused 再検証:
+      - deps: npm audit 0 脆弱性（変更なし）。
+      - O22(B+E): PASS（signin/link/signout 動線が authProvider/authClient/AccountAuthSection/AccountView に実在）。
+      - secure: 新 auth コードは keyless seam + 既存 audited backend 契約への orchestration。新規 external input/
+        secret なし。link は guest Bearer + account_token を既存 verify 済 backend へ。
+      - env-coverage drift 検出+修正: authProvider が VITE_CLERK_PUBLISHABLE_KEY を read するが .env.example は
+        CLERK_PUBLISHABLE_KEY（VITE 接頭辞なし）→ Vite が client へ露出せず key 設定しても stub 固定。
+        .env.example を VITE_CLERK_PUBLISHABLE_KEY へ修正（公開鍵は露出前提で安全）。
+    .env.local 不在 = 全実キー未配線 → release Phase 1 で FILL。release-pre fresh → P4.7 へ。
+```
 
 ## 追記 decision 3
 ```yaml
