@@ -33,6 +33,6 @@ feature (cross-cutting)
 ### タイトル
 _shared/db: DB スキーマ + owner scoping/DSR purge 実装
 ### 概要
-math-relax の DB 基盤。9 テーブル + owner 分離(SEC-001)/DSR セルフ削除(SEC-004)/verified-only 配信を実装し PGlite で検証。
+Math-Tree の DB 基盤。9 テーブル + owner 分離(SEC-001)/DSR セルフ削除(SEC-004)/verified-only 配信を実装し PGlite で検証。
 ### テスト
 - 6/6 green（owner 分離 / 前進のみ / 後退拒否 / DSR purge / verified-only / supports 冪等）。

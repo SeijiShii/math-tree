@@ -1,6 +1,6 @@
 # _shared/db 仕様書（横断: DB スキーマ）
 
-> **役割**: math-relax の DB スキーマ・マイグレーション基盤（Neon Postgres + Drizzle ORM）。全機能が参照する単一のデータ基盤。
+> **役割**: Math-Tree の DB スキーマ・マイグレーション基盤（Neon Postgres + Drizzle ORM）。全機能が参照する単一のデータ基盤。
 > **タグ**: cross-cutting, auth-required（owner scoping）
 > **最終更新**: 2026-06-20
 > **入力アーティファクト**: `../../concept.md`（§5 データ設計 / §3.X セキュリティ要件 / §1.3.2）, `./README.md`

@@ -1,17 +1,19 @@
-import { Routes, Route, Link } from 'react-router-dom'
-import { TechTreeView } from './features/tech-tree/TechTreeView'
-import { WorkbookView } from './features/learning-workbook/WorkbookView'
-import { AccountView } from './features/account/AccountView'
-import { LegalPage } from './routes/LegalPage'
-import { FeedbackWidget } from './features/feedback/FeedbackWidget'
+import { Routes, Route, Link } from "react-router-dom";
+import { TechTreeView } from "./features/tech-tree/TechTreeView";
+import { WorkbookView } from "./features/learning-workbook/WorkbookView";
+import { AccountView } from "./features/account/AccountView";
+import { LegalPage } from "./routes/LegalPage";
+import { FeedbackWidget } from "./features/feedback/FeedbackWidget";
 
 export function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <Link to="/" className="brand">math-relax</Link>
+        <Link to="/" className="brand">
+          Math-Tree
+        </Link>
         <nav className="app-nav">
-          <Link to="/">ツリー</Link>
+          <Link to="/">学びの樹</Link>
           <Link to="/account">マイデータ</Link>
         </nav>
       </header>
@@ -22,7 +24,10 @@ export function App() {
           <Route path="/account" element={<AccountView />} />
           <Route path="/legal/privacy" element={<LegalPage doc="privacy" />} />
           <Route path="/legal/terms" element={<LegalPage doc="terms" />} />
-          <Route path="/legal/specified-commercial-transactions" element={<LegalPage doc="sct" />} />
+          <Route
+            path="/legal/specified-commercial-transactions"
+            element={<LegalPage doc="sct" />}
+          />
         </Routes>
       </main>
       <footer className="app-footer">
@@ -32,5 +37,5 @@ export function App() {
       </footer>
       <FeedbackWidget />
     </div>
-  )
+  );
 }

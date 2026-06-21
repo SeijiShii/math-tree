@@ -1,7 +1,7 @@
 {
-  "name": "math-relax",
-  "short_name": "math-relax",
-  "description": "テックツリーで学ぶ 数学学びなおし",
+  "name": "Math-Tree",
+  "short_name": "Math-Tree",
+  "description": "数学の学びなおし",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f1729",

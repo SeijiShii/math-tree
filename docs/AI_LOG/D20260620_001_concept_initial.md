@@ -41,7 +41,7 @@
 - 更新: `docs/wants.md`（クリア予定、Step 5.5）
 
 ## 学習・改善
-- math-relax は ai-mindmap の sibling（AI 生成 + React Flow + tip-jar）。標準 Neon スタックを再採用。
+- Math-Tree は ai-mindmap の sibling（AI 生成 + React Flow + tip-jar）。標準 Neon スタックを再採用。
 - 新規傾向候補: AI 生成コンテンツの「別 AI 多段クロス検証で正確性担保」（人手監修不在 PJ。採用 1=試行レベル）。
 - 新規ライブラリ候補: MathLive（WYSIWYG 数式入力）+ KaTeX（数式描画）— preferences 未登録カテゴリ。
 
@@ -64,7 +64,7 @@
     preferences.md (最終更新 2026-06-19、学習元 11 PJ) を Read。
     強い選好 (採用 6+): React+TS(Vite) 8 / Vercel Functions 8 / Neon 8 / Clerk 8 /
     Vercel Hobby 9 / Sentry 9 / Vercel Web Analytics 6 / GitHub Actions CI 9 /
-    Drizzle 8 / shadcn/ui 9 / Stripe 単発 6。math-relax は ai-mindmap の sibling
+    Drizzle 8 / shadcn/ui 9 / Stripe 単発 6。Math-Tree は ai-mindmap の sibling
     (AI 生成コンテンツ + React Flow グラフ + tip-jar) と判定。
 
 - id: D20260620-002
@@ -217,7 +217,7 @@
   chosen_type: explicit-choice
   depends_on: [D20260620-001, D20260620-002]
   context: |
-    Neon スタック core row +1（PJ 例に math-relax）、React Flow 1→2（傾向到達）、
+    Neon スタック core row +1（PJ 例に Math-Tree）、React Flow 1→2（傾向到達）、
     Turnstile 1→2、Claude API 生成+多段検証 新規行、新カテゴリ §2.25 MathLive+KaTeX。
     学習元 PJ 数 11→12。§7 更新履歴追記。
 

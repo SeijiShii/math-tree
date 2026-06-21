@@ -1,4 +1,4 @@
-# math-relax デザインシステム（SoT）
+# Math-Tree デザインシステム（SoT）
 
 **生成元**: /flow:design（NEW、SoT 生成のみ）
 **生成日**: 2026-06-20

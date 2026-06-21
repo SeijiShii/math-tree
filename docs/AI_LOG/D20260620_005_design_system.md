@@ -35,7 +35,7 @@
   timestamp: 2026-06-20T09:12:00+09:00
   command: /flow:design
   phase: Step 1 / デザイン方向確定（Class C creative checkpoint）
-  question: math-relax のデザイン方向
+  question: Math-Tree のデザイン方向
   options:
     - 穏やか・知的・到達感（藍×琥珀） (recommended)
     - 元気・カラフル（学びの楽しさ）

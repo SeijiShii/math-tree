@@ -1,4 +1,4 @@
-# math-relax 開発シナリオ
+# Math-Tree 開発シナリオ
 
 **最終更新**: 2026-06-20 08:45
 **生成元**: /flow:concept (初回) / /flow:scenario (更新)

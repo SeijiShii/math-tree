@@ -28,7 +28,7 @@
 | **GitHub** | リポジトリ + CI | github.com | Free | Actions 無料枠 |
 
 ## 3. ドメイン (公開 PJ)
-- 既存ドメインありなら **サブドメ運用**（`math-relax.<existing>`）を推奨（O29、撤退時 DNS 1 行削除）。
+- 既存ドメインありなら **サブドメ運用**（`math-tree.<existing>`）を推奨（O29、撤退時 DNS 1 行削除）。
 - 検証段階は `*.vercel.app` で開始可。
 
 ## 4. 認証プロバイダ設定 (O22)
