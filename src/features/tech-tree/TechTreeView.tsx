@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
-import { ReactFlow, Background, MiniMap, Controls } from "@xyflow/react";
+import {
+  ReactFlow,
+  Background,
+  MiniMap,
+  Controls,
+  Position,
+} from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import type { TechTreeGraph } from "../../types/graph";
 import { nodeVisual, NODE_TOKEN } from "../../lib/nodeStyle";
+import { layoutVertical } from "./layout";
 import { apiFetch } from "../../lib/api/client";
 
 export function TechTreeView() {
@@ -13,12 +20,19 @@ export function TechTreeView() {
       .then(setGraph)
       .catch(() => {});
   }, []);
-  const rfNodes = graph.nodes.map((n, i) => {
+  // 依存の深さで縦に流す（前提=上 → 応用=下）。横一列グリッドではなく依存グラフのレイヤ配置。
+  const layout = layoutVertical(graph);
+  const posById = new Map(layout.map((p) => [p.id, p]));
+  const rfNodes = graph.nodes.map((n) => {
     const v = nodeVisual(n.state, n.isRomanceNode);
     const t = NODE_TOKEN[v];
+    const p = posById.get(n.id) ?? { x: 0, y: 0 };
     return {
       id: n.id,
-      position: { x: (i % 4) * 200, y: Math.floor(i / 4) * 140 },
+      position: { x: p.x, y: p.y },
+      // 縦フロー: 前提は上端から、応用は下端へ繋ぐ
+      sourcePosition: Position.Bottom,
+      targetPosition: Position.Top,
       data: { label: n.title },
       style: {
         border: `2px ${v === "locked" ? "dashed" : "solid"} ${t.outline}`,
