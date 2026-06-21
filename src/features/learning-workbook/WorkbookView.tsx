@@ -28,7 +28,7 @@ export function WorkbookView() {
       .catch(() => null);
     setResult(
       r?.match
-        ? "正解！次のステップへ"
+        ? "正解。次のステップへ"
         : (r?.hint ?? "惜しい、見直してみましょう"),
     );
   }

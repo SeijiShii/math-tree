@@ -42,7 +42,9 @@ describe("AccountAuthSection (O22(B+E) 両輪 UI)", () => {
   it("E3: seam unavailable（keyless）→「準備中」で無効化、linkAccount 呼ばない", () => {
     available = false;
     const { getByText } = render(<AccountAuthSection />);
-    const btn = getByText("連携は準備中（公開後に有効）") as HTMLButtonElement;
+    const btn = getByText(
+      "アカウント連携はもうしばらくお待ちください",
+    ) as HTMLButtonElement;
     expect(btn.disabled).toBe(true);
     fireEvent.click(btn);
     expect(linkAccount).not.toHaveBeenCalled();

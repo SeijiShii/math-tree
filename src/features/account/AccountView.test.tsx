@@ -14,6 +14,6 @@ describe("AccountView (SEC-004 DSR セルフ削除)", () => {
     const { getByText } = render(<AccountView />);
     // keyless（テスト env に VITE_CLERK_PUBLISHABLE_KEY なし）→ ゲスト + 準備中表示
     expect(getByText(/ゲストで利用中/)).toBeTruthy();
-    expect(getByText(/連携は準備中/)).toBeTruthy();
+    expect(getByText(/もうしばらくお待ち/)).toBeTruthy();
   });
 });

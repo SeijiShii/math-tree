@@ -20,7 +20,9 @@ export function AccountAuthSection() {
       setLinked(true);
       setMsg("データを引き継いでアカウント連携しました。");
     } else if (r.reason === "failed") {
-      setMsg("連携に失敗しました。時間をおいて再度お試しください。");
+      setMsg(
+        "うまく連携できませんでした。時間をおいてもう一度お試しください。",
+      );
     }
     // unavailable / cancelled は状態据え置き（white-screen にしない）
   }
@@ -46,7 +48,7 @@ export function AccountAuthSection() {
         </Button>
       ) : (
         <Button variant="ghost" disabled>
-          連携は準備中（公開後に有効）
+          アカウント連携はもうしばらくお待ちください
         </Button>
       )}
       {msg && <p className="muted">{msg}</p>}
