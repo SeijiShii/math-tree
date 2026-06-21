@@ -11,3 +11,7 @@ dist/
 .DS_Store
 # exports (収益/コストエクスポート、版管理外)
 exports/
+
+# flow ループ作業マーカー
+.flow-loop-active
+.flow-needs-compact
