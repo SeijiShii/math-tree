@@ -2,10 +2,10 @@
 
 **issue / slug**: 001 / auth-ui-signin-signout
 **実施日**: 2026-06-21
-**状態**: 設計完了（tdd 実装前）
+**状態**: 実装完了（2026-06-21、109 passed / typecheck・build green）
 
 <!-- auto-generated-start -->
-<!-- ticket-status: designed -->
+<!-- ticket-status: implemented | updated: 20260621 | ref: 101 -->
 
 ## ファイル一覧
 | 番号 | ファイル | 種別 | 最終更新 |
@@ -14,6 +14,8 @@
 | 002 | 002_REVISE_PLAN.md | 変更計画書 | 2026-06-21 |
 | 003 | 003_REVISE_UNIT_TEST.md | 単体テスト計画 | 2026-06-21 |
 | 004 | 004_REVISE_E2E_TEST.md | E2E テスト計画 | 2026-06-21 |
+| 101 | 101_REVISE_IMPL_REPORT.md | 実装レポート | 2026-06-21 |
+| 102 | 102_REVISE_UNIT_TEST_REPORT.md | 単体テストレポート | 2026-06-21 |
 
 ## 関連
 - 親機能 INDEX: `../INDEX.md`
