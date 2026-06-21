@@ -43,7 +43,8 @@ export function WorkbookView() {
         答え合わせ
       </Button>
       {result && <p className="result">{result}</p>}
-      <SupportButton />
+      {/* tip-jar は Stripe 配線時のみ表示（VITE_ENABLE_TIPJAR）。ゲスト専用 MVP では非表示 */}
+      {import.meta.env.VITE_ENABLE_TIPJAR === "true" && <SupportButton />}
     </section>
   );
 }
