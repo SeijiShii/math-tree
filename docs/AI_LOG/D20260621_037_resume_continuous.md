@@ -2,7 +2,28 @@
 **実行日時**: 2026-06-21 (+09:00)
 **コマンド**: /flow:auto（continuous、再 invoke）
 **対象**: 未コミット branding rename の green commit → §3.0c release-pre 鮮度ゲート（audit full → secure）
-**状態**: 進行中（audit + O22 連携UI 実装完了 → Wording gate Class C で 1-decision pause）
+**状態**: 進行中（audit + O22 連携UI + Wording 完了 → Release 境界、no-key Class A 枯渇）
+
+## 追記 decision 3
+```yaml
+- id: D20260621-088
+  command: /flow:auto
+  phase: §4.5.1#0 no-key/Class-A 枯渇チェック（Wording 完了後）
+  question: Wording 完了後の next-step
+  chosen: Release 境界を提示（推奨: /flow:release）+ 残オプション（hardening / 後日 release）
+  chosen_type: auto-recommended
+  depends_on: [D20260621-087]
+  context: |
+    完了済: O22(B+E) UI / Wording / full audit / §8 reconcile。109 tests green / build green。
+    §4.5.1#0 棚卸し: no-key Class A は実質枯渇 —
+      (a) O24 zod / O01 Sentry / O02 analytics は audit が Medium=release-phase deferred と分類、
+      (b) E2E(P4.5)/Design視覚(P4.4b) は browser tooling 未導入 deferred、
+      (c) 残substantive work = Release工程（実キー FILL=Class C / 特商法=Class C / デプロイ=Class B /
+          live billing / 独自サブドメイン）。.env.local に実キー不足。
+    §4.5.1#0 step4: no-key 枯渇 + 実キー不足 → 「停止」でなく P4.7 Release gate。
+    ただし release は即 Class C（キー FILL は本人しか持たない）→ Step 5.1 で推奨つき human next-step を提示。
+    release-pre 必須監査: AUDIT_20260621_1813 は auth UI commit 以降やや stale → release 着手時に再 audit→secure。
+```
 
 ## 追記 decision 2
 ```yaml
