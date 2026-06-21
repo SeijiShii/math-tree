@@ -62,15 +62,16 @@
 <!-- AUTO-GENERATED:BEGIN scenario-cursor -->
 - 現在フェーズ: Phase 4 (公開準備) — ゲスト専用 MVP を本番デプロイ済（検証フェーズ公開）
 - 進行中ターゲット: 公開後運用 + 「完成」残ステップ（独自サブドメイン / Stripe live 課金）
-- 最終更新セッション: D20260621_042_release_math-tree
-- 最終更新時刻: 2026-06-21
+- 最終更新セッション: D20260622_045_revise_favicon（+ D20260622_044 standard audit fresh）
+- 最終更新時刻: 2026-06-22
 - 完了フェーズ: [Phase 1, Phase 1.5 design SoT, Phase 2 機能設計, Phase 3 実装, O22(B+E)連携UI revise, Wording, full audit, Phase 4 本番デプロイ(ゲスト専用MVP)]
 - 公開 URL: https://math-tree-psi.vercel.app（*.vercel.app = 検証フェーズ。独自サブドメインは「完成」ステップで設定）
 - リポジトリ: https://github.com/SeijiShii/math-tree（public）
 - 配線済キー: DATABASE_URL + GUEST_TOKEN_SECRET（core 稼働）。空: Clerk(連携=準備中) / Anthropic(AI採点=CASで充足) / Stripe(tip-jar=VITE_ENABLE_TIPJAR で非表示)
 - post-deploy スモーク green: frontend 200 / guest 認証 200 / 保護API 401→200 / seeded units 配信
-- 次の推奨（「完成」へ）: ① 独自サブドメイン(math-tree.<domain>) + DNS（§3.2、ユーザー保有ドメイン要）② Stripe live + 特商法で tip-jar 有効化 ③ promote 告知（サブドメイン確定後）。いずれも Class C/B 人間ゲート
-- 注記: E2E(P4.5) / Design 視覚(P4.4b) は browser tooling 未導入で deferred。AI 採点は ANTHROPIC_API_KEY 注入時に有効化（現状 CAS で充足）
+- 次の推奨（「完成」へ）: ① 再デプロイで favicon(O56) + tech-tree 縦レイアウト fix を本番反映 ② 独自サブドメイン math-tree.givers.work + DNS（§3.2、ConoHa、services.toml 記録済）③ Stripe live + 特商法で tip-jar 有効化 ④ promote 告知（サブドメイン確定後）。①=Class B / ②③=Class C/B 人間ゲート → /flow:release で一括
+- 2026-06-22 監査: standard audit fresh（Critical/High 0）。drift シュート: O56 favicon 配線済（要再デプロイ）。O64 Stripe webhook は tip-jar と共に release 工程へ deferred
+- 注記: E2E(P4.5) / Design 視覚(P4.4b) は browser tooling 未導入で deferred（release Phase 2 実機目視で代替）。AI 採点は ANTHROPIC_API_KEY 注入時に有効化（現状 CAS で充足）
 <!-- AUTO-GENERATED:END scenario-cursor -->
 
 ## 6. 変更履歴
