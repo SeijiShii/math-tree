@@ -301,6 +301,8 @@ L1 設計レビュー（`SECURITY_REVIEW_20260620.md`）で High と判定され
 
 ### 4.7 公開戦略・ドメイン・リバースプロキシ
 
+<!-- publish-status: note=pending | updated:20260622 | url=https://math-tree.givers.work -->
+
 #### 4.7.1 ドメイン情報
 - **既存ドメイン**: 既存ドメインありなら**サブドメ運用**（`math-tree.<existing>`）を推奨（撤退リスク最小、DNS 1 行削除で完結）。検証段階は Vercel デフォルト `*.vercel.app` で開始可。
 
