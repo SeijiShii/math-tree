@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "../../components/ui/Button";
 import { apiFetch } from "../../lib/api/client";
+import { AccountAuthSection } from "./AccountAuthSection";
 
 export function AccountView() {
   const [done, setDone] = useState(false);
@@ -16,6 +17,8 @@ export function AccountView() {
     <section className="account">
       <h1>マイデータ</h1>
       <p>あなたの進捗・支援・いただいた声を、ここでいつでも確認できます。</p>
+      {/* O22(B+E): ゲスト→アカウント連携 ↔ サインアウトの両輪 */}
+      <AccountAuthSection />
       {/* SEC-004 / O54: セルフサービス全削除（非交渉の必須導線） */}
       {done ? (
         <p>削除しました。</p>
