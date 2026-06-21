@@ -418,8 +418,8 @@ L1 設計レビュー（`SECURITY_REVIEW_20260620.md`）で High と判定され
 - **担当**: seiji
 
 ### [論点-003] [SEC-001] 認可漏れ（所有者チェック）: High
-- **status**: `accepted-as-requirement`
-- **status 履歴**: 2026-06-20 open → 2026-06-20 accepted-as-requirement（/flow:secure --scope=concept で §3.X 要件化）
+- **status**: `resolved`（実装済）
+- **status 履歴**: 2026-06-20 open → 2026-06-20 accepted-as-requirement（/flow:secure --scope=concept で §3.X 要件化）→ 2026-06-21 resolved（/flow:tdd _shared/auth: resolveOwner auth seam で Bearer を guest/Clerk JWT 検証 → withOwner で全クエリ owner 強制、旧 x-owner-id なりすまし撤廃。audit 2026-06-21 reconcile）
 - **影響範囲**: §3 NFR, §5, §6, tech-tree / learning-workbook / support / feedback
 - **観点 ID**: O23_authorization_check
 - **検出根拠**: 複数ユーザー PJ だが API の所有者チェック/認可マトリクスが concept 未明示
@@ -448,8 +448,8 @@ L1 設計レビュー（`SECURITY_REVIEW_20260620.md`）で High と判定され
 - **L1 レポート**: `./SECURITY_REVIEW_20260620.md#sec-003`
 
 ### [論点-006] [SEC-004] DSR 履行可能性: High（法令必須）
-- **status**: `accepted-as-requirement`
-- **status 履歴**: 2026-06-20 open → 2026-06-20 accepted-as-requirement
+- **status**: `resolved`（実装済）
+- **status 履歴**: 2026-06-20 open → 2026-06-20 accepted-as-requirement → 2026-06-21 resolved（AccountView セルフサービス「全データ削除」+ purgeOwnerData cascade purge 実装、プラポリに「運営側で個人特定不可」正直明記。audit 2026-06-21 reconcile）
 - **影響範囲**: §1.1 UC, §5 データ設計（cascade/purge）, §9 法務, _shared/auth / account
 - **観点 ID**: O54_dsr_fulfillment_operability
 - **検出根拠**: §9.1 でセルフサービス削除を約束、in-app 実削除 + 全ストア purge の実装担保が未確定
@@ -458,7 +458,8 @@ L1 設計レビュー（`SECURITY_REVIEW_20260620.md`）で High と判定され
 - **L1 レポート**: `./SECURITY_REVIEW_20260620.md#sec-004`
 
 ### [論点-007] [SEC-005] レート制限: Medium
-- **status**: `open`
+- **status**: `partial`（seam 実装済 / serverless 持続性が課題）
+- **status 履歴**: 2026-06-20 open → 2026-06-21 partial（api/auth.ts に InMemoryRateLimiter seam 実装。ただし Vercel Functions では invocation 間でメモリ非共有のため実効性は限定的 → release 時に Upstash Ratelimit 等の永続ストア化を検討。audit 2026-06-21）
 - **影響範囲**: §3 NFR, §4.3, §4.6.2, support / feedback / progress API
 - **観点 ID**: O27_rate_limit_scope
 - **検出根拠**: AI コスト爆発は事前生成で緩和済みだが、一般書き込み API のレート制限が未設計
