@@ -1,5 +1,5 @@
 # Math-Tree サービス座標（撤退時 /flow:sunset は subdomain の DNS 1 行削除 + Vercel 登録解除で完結）
-subdomain = "math-tree.givers.work"   # 公開/告知 URL（https://）
-platform_url = "math-tree-psi.vercel.app"  # Vercel alias（DNS 伝播前の暫定）
+subdomain = "math-tree.givers.work"   # 公開/告知 URL（https://、DNS 伝播済・配信中 200）
+platform_url = "math-tree-psi.vercel.app"  # Vercel raw URL（fallback、canonical = subdomain）
 repo = "https://github.com/SeijiShii/math-tree"
 dns_provider = "ConoHa"               # givers.work ネームサーバ（a/b.conoha-dns）

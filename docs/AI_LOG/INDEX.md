@@ -14,6 +14,7 @@
 
 | ファイル | 実行日 | コマンド | 対象 | decision 範囲 | 状態 |
 |---|---|---|---|---|---|
+| [D20260622_046_release_math-tree.md](./D20260622_046_release_math-tree.md) | 2026-06-22 | /flow:release | favicon 再デプロイ + subdomain | D20260622-096〜097 | 完了 |
 | [D20260622_045_revise_favicon.md](./D20260622_045_revise_favicon.md) | 2026-06-22 | /flow:auto(drift) | _shared/ui favicon | D20260622-095 | 完了 |
 | [D20260622_044_audit_standard.md](./D20260622_044_audit_standard.md) | 2026-06-22 | /flow:audit | 全体(standard) | D20260622-094 | 完了 |
 | [D20260620_018_feature__shared_app-shell.md](./D20260620_018_feature__shared_app-shell.md) | 2026-06-20 | /flow:feature | _shared/app-shell | D20260620-042 | 完了 |
