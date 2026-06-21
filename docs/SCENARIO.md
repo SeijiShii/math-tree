@@ -60,13 +60,17 @@
 ## 5. 現在地カーソル
 
 <!-- AUTO-GENERATED:BEGIN scenario-cursor -->
-- 現在フェーズ: Phase 3 (実装) ロジック+presentation+api 完了 → Phase 4 (公開準備/release) 着手前
-- 進行中ターゲット: 全 13 モジュール実装完了（64 unit green + typecheck green + production build 成功）
-- 最終更新セッション: D20260620_034_tdd_api-wiring
-- 最終更新時刻: 2026-06-20 13:02
-- 完了フェーズ: [Phase 1, Phase 1.5 design SoT, Phase 2 機能設計, Phase 3 実装(ロジック/presentation/api)]
-- 次の推奨コマンド: /flow:release（実キー FILL: Neon/Clerk/Anthropic/Stripe → ローカル動作確認 → デプロイ）。Class C(実キー)+B(デプロイ) の人間ゲート
-- 注記: grade-step/support webhook は実キー(AI/Stripe) inject 待ちで 501。Design gate(b) 視覚レビュー + wording + E2E はブラウザ/実 DB で release 前後に実施
+- 現在フェーズ: Phase 4 (公開準備) — ゲスト専用 MVP を本番デプロイ済（検証フェーズ公開）
+- 進行中ターゲット: 公開後運用 + 「完成」残ステップ（独自サブドメイン / Stripe live 課金）
+- 最終更新セッション: D20260621_042_release_math-tree
+- 最終更新時刻: 2026-06-21
+- 完了フェーズ: [Phase 1, Phase 1.5 design SoT, Phase 2 機能設計, Phase 3 実装, O22(B+E)連携UI revise, Wording, full audit, Phase 4 本番デプロイ(ゲスト専用MVP)]
+- 公開 URL: https://math-tree-psi.vercel.app（*.vercel.app = 検証フェーズ。独自サブドメインは「完成」ステップで設定）
+- リポジトリ: https://github.com/SeijiShii/math-tree（public）
+- 配線済キー: DATABASE_URL + GUEST_TOKEN_SECRET（core 稼働）。空: Clerk(連携=準備中) / Anthropic(AI採点=CASで充足) / Stripe(tip-jar=VITE_ENABLE_TIPJAR で非表示)
+- post-deploy スモーク green: frontend 200 / guest 認証 200 / 保護API 401→200 / seeded units 配信
+- 次の推奨（「完成」へ）: ① 独自サブドメイン(math-tree.<domain>) + DNS（§3.2、ユーザー保有ドメイン要）② Stripe live + 特商法で tip-jar 有効化 ③ promote 告知（サブドメイン確定後）。いずれも Class C/B 人間ゲート
+- 注記: E2E(P4.5) / Design 視覚(P4.4b) は browser tooling 未導入で deferred。AI 採点は ANTHROPIC_API_KEY 注入時に有効化（現状 CAS で充足）
 <!-- AUTO-GENERATED:END scenario-cursor -->
 
 ## 6. 変更履歴

@@ -5,7 +5,7 @@
 **状態**: 実装完了（2026-06-21、109 passed / typecheck・build green）
 
 <!-- auto-generated-start -->
-<!-- ticket-status: implemented | updated: 20260621 | ref: 101 -->
+<!-- ticket-status: shipped | updated: 20260621 | ref: dpl_5smVq4zWne2M1ZLeadmGFoPd3UXM -->
 
 ## ファイル一覧
 | 番号 | ファイル | 種別 | 最終更新 |

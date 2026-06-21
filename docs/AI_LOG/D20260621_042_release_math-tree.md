@@ -3,7 +3,39 @@
 **コマンド**: /flow:release
 **対象**: Math-Tree（pre-release 初回）
 **実行者**: Claude (Opus 4.8) + seiji
-**状態**: 進行中（Phase 1 §1.0 判定 → launch scope 決定待ち = Class C 人間ゲート）
+**状態**: 完了（ゲスト専用 MVP 本番デプロイ + post-deploy スモーク green）
+metrics: { deploy_target: production, deployed_url: "https://math-tree-psi.vercel.app", check_result: green, paid_confirmed: n/a(無課金 MVP) }
+
+## 追記 decision（デプロイ実行）
+```yaml
+- id: D20260621-091
+  command: /flow:release
+  phase: launch scope（Class C 人間判断）
+  question: 公開 scope
+  chosen: ゲスト専用 MVP を最速公開（*.vercel.app 検証フェーズ）
+  chosen_type: explicit-choice
+  context: |
+    ユーザー選択。core（tech-tree+CAS自己採点+seeded カリキュラム+ゲスト認証）は配線済 2 キーで稼働。
+    tip-jar を VITE_ENABLE_TIPJAR でゲート（Stripe 未配線で非表示、死にボタン排除）= Class A cleanup 実施。
+
+- id: D20260621-092
+  command: /flow:release
+  phase: Phase 3 / デプロイ実行（Class B 承認済 agent 連続実行）
+  question: 本番デプロイ結果
+  chosen: 成功・post-deploy スモーク全 green
+  chosen_type: auto-recommended
+  depends_on: [D20260621-091]
+  context: |
+    ① GitHub public repo SeijiShii/math-tree 作成+push（B-2、秘密 gitignore 済）。
+    ② vercel link → quadiishii-9506s-projects/math-tree（GitHub連携 400 は cross-account 想定内 = CLI デプロイ運用、CF-20260529-001）。
+    ③ Neon migrate+seed（schema 9 stmts + 5 units、idempotent）。
+    ④ deploy-prod.sh: sync-prod-env（masked）→ vercel-build（7 functions ≤12 Hobby）→ handler/関数数/raw-body guard → deploy --prebuilt --prod。
+       本番 https://math-tree-psi.vercel.app（aliased）READY。
+    ⑤ smoke（smoke-prod.sh）: frontend 200 / guest provision 201(JWT) / 保護API 無token 401 / guest Bearer 200 /
+       tech-tree が seeded units 配信。O51(非500) + O22(認証 end-to-end 200) 充足。
+    「完成」残（Class C/B）: 独自サブドメイン+DNS / Stripe live+特商法で tip-jar / promote（サブドメ確定後）。
+    promote は *.vercel.app では告知 URL 非確定（CF-008）ゆえ deferred（独自サブドメイン後）。
+```
 
 ## Decisions
 ```yaml
