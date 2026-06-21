@@ -14,6 +14,7 @@
 
 | ファイル | 実行日 | コマンド | 対象 | decision 範囲 | 状態 |
 |---|---|---|---|---|---|
+| [D20260622_048_design_apply.md](./D20260622_048_design_apply.md) | 2026-06-22 | /flow:design | 全画面スタイル適用 + 視覚レビュー | D20260622-099〜100 | 完了 |
 | [D20260622_047_promote_math-tree.md](./D20260622_047_promote_math-tree.md) | 2026-06-22 | /flow:promote | 告知文生成（note/X/FB+画像） | D20260622-098 | 完了 |
 | [D20260622_046_release_math-tree.md](./D20260622_046_release_math-tree.md) | 2026-06-22 | /flow:release | favicon 再デプロイ + subdomain | D20260622-096〜097 | 完了 |
 | [D20260622_045_revise_favicon.md](./D20260622_045_revise_favicon.md) | 2026-06-22 | /flow:auto(drift) | _shared/ui favicon | D20260622-095 | 完了 |

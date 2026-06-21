@@ -71,7 +71,8 @@
 - post-deploy スモーク green（2026-06-22、canonical subdomain）: frontend 200 / favicon.svg 200 / manifest 200 / guest 認証 201 / 保護API 401→200
 - 次の推奨: ① P4.8 Promote（告知文生成 note/X/FB、URL=math-tree.givers.work）② [将来] Stripe live + 特商法で tip-jar 有効化（現状 VITE_ENABLE_TIPJAR 非表示でスコープ外）③ 公開後運用（claim/fix/revise）
 - 2026-06-22 監査+リリース: standard audit fresh（C/H 0）→ O56 favicon 配線+本番反映済 → 独自サブドメイン math-tree.givers.work live 確認（DNS 既設定）。O64 Stripe webhook は tip-jar と共に deferred
-- 注記: E2E(P4.5) / Design 視覚(P4.4b) は browser tooling 未導入で deferred（release Phase 2 実機目視で代替）。AI 採点は ANTHROPIC_API_KEY 注入時に有効化（現状 CAS で充足）
+- 2026-06-22 Design gate: 視覚デザインレビュー green（headless playwright で全画面スクショ → screen/layout スタイル適用 + 逸脱 2 件修正: 絵文字→SVG / React Flow 暗テーマ化）。dead-class（CSS 未適用）を是正済
+- 注記: E2E(P4.5) は browser tooling での網羅自動テスト未整備（release post-deploy スモークで主要導線 green）。AI 採点は ANTHROPIC_API_KEY 注入時に有効化（現状 CAS で充足）
 <!-- AUTO-GENERATED:END scenario-cursor -->
 
 ## 6. 変更履歴
