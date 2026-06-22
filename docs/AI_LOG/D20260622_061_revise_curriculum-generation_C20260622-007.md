@@ -1,5 +1,5 @@
 # AI_LOG D20260622_061 — /flow:revise curriculum-generation C20260622-007
-**2026-06-22 / revise / 状態: 設計完了 → tdd**
+**2026-06-22 / revise / 状態: Phase1-4 実装完了（181 green）→ Phase5 key-gated**
 ## Decisions
 ```yaml
 - id: D20260622-113
