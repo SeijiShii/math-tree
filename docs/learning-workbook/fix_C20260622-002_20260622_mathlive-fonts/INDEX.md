@@ -3,8 +3,8 @@
 **issue / slug**: C20260622-002 / mathlive-fonts
 **重大度**: high
 **実施日**: 2026-06-22
-**状態**: 実装完了（2026-06-22）
-<!-- ticket-status: implemented | updated: 20260622 | ref: 101 -->
+**状態**: shipped（2026-06-22 本番反映・フォント 200 検証済）
+<!-- ticket-status: shipped | updated: 20260622 | ref: b82a3dc -->
 
 ## ファイル一覧
 | 番号 | ファイル | 種別 |

@@ -72,6 +72,8 @@
 - 次の推奨: ① P4.8 Promote（告知文生成 note/X/FB、URL=math-tree.givers.work）② [将来] Stripe live + 特商法で tip-jar 有効化（現状 VITE_ENABLE_TIPJAR 非表示でスコープ外）③ 公開後運用（claim/fix/revise）
 - 2026-06-22 監査+リリース: standard audit fresh（C/H 0）→ O56 favicon 配線+本番反映済 → 独自サブドメイン math-tree.givers.work live 確認（DNS 既設定）。O64 Stripe webhook は tip-jar と共に deferred
 - 2026-06-22 claim C20260622-001（本番）: テックツリーのノードクリック無反応 + ミニマップ白箱 → fix 完了・本番反映済（入口ノード unlocked 化 + onNodeClick→/learn 配線 + MiniMap 暗テーマ、127 tests green、本番でクリック→/learn 遷移を実検証）
+- 2026-06-22 claim C20260622-002（本番）: MathLive 数式フォントが /assets/fonts で 404 → fix 完了・本番反映済（フォントを public/mathlive/fonts に同梱 + fontsDirectory='/mathlive/fonts' 固定、128 tests green、本番で woff2 200 + font 読込失敗ゼロを実検証）
+- 2026-06-22 UI: マップ右下のミニマップ（現在地インジケータ）をユーザー要望で削除（本番反映済、Controls=ズームは維持）
 - 2026-06-22 Design gate: 視覚デザインレビュー green（headless playwright で全画面スクショ → screen/layout スタイル適用 + 逸脱 2 件修正: 絵文字→SVG / React Flow 暗テーマ化）。dead-class（CSS 未適用）を是正 → **本番反映済**（math-tree.givers.work で styled tech-tree + 実データ配信を視覚確認）
 - 注記: E2E(P4.5) は browser tooling での網羅自動テスト未整備（release post-deploy スモークで主要導線 green）。AI 採点は ANTHROPIC_API_KEY 注入時に有効化（現状 CAS で充足）
 <!-- AUTO-GENERATED:END scenario-cursor -->
