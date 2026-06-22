@@ -42,3 +42,38 @@ describe("tech-tree nodeNav（C20260622-001 ノード選択→学習遷移）", 
     expect(learnTarget({ slug: "rsa", canLearn: false })).toBeNull();
   });
 });
+
+import { pickCurrentNodeId } from "./nodeNav";
+
+describe("pickCurrentNodeId（現在地ズーム対象, C20260622-008）", () => {
+  const y = (pairs: [string, number][]) => new Map(pairs);
+  it("unlocked の最深（進捗フロンティア）を返す", () => {
+    const nodes = [
+      { id: "a", state: "mastered" as const },
+      { id: "b", state: "unlocked" as const },
+      { id: "c", state: "unlocked" as const },
+      { id: "d", state: "locked" as const },
+    ];
+    expect(
+      pickCurrentNodeId(nodes, y([["a", 0], ["b", 150], ["c", 300], ["d", 450]])),
+    ).toBe("c");
+  });
+  it("unlocked が無ければ mastered の最深", () => {
+    const nodes = [
+      { id: "a", state: "mastered" as const },
+      { id: "b", state: "mastered" as const },
+      { id: "d", state: "locked" as const },
+    ];
+    expect(pickCurrentNodeId(nodes, y([["a", 0], ["b", 150], ["d", 300]]))).toBe("b");
+  });
+  it("全 locked なら最深ノード（フォールバック）", () => {
+    const nodes = [
+      { id: "a", state: "locked" as const },
+      { id: "b", state: "locked" as const },
+    ];
+    expect(pickCurrentNodeId(nodes, y([["a", 0], ["b", 150]]))).toBe("b");
+  });
+  it("空なら null", () => {
+    expect(pickCurrentNodeId([], y([]))).toBeNull();
+  });
+});

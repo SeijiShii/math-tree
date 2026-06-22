@@ -16,3 +16,25 @@ export function learnTarget(node: {
   if (!node.slug) return null;
   return `/learn/${node.slug}`;
 }
+
+/**
+ * 初期ビューポートの中心に据える「現在地」ノード id（C20260622-008）。
+ * 進捗フロンティア = 解放済み（unlocked）の最深ノード。無ければ mastered の最深、
+ * それも無ければ先頭。広大ツリーで全体 fitView せず現在地あたりをズーム表示するため。
+ */
+export function pickCurrentNodeId(
+  nodes: { id: string; state: ProgressState }[],
+  yById: Map<string, number>,
+): string | null {
+  if (nodes.length === 0) return null;
+  const byState = (st: ProgressState) => nodes.filter((n) => n.state === st);
+  const pool =
+    byState("unlocked").length > 0
+      ? byState("unlocked")
+      : byState("mastered").length > 0
+        ? byState("mastered")
+        : nodes;
+  return pool.reduce((a, b) =>
+    (yById.get(b.id) ?? 0) > (yById.get(a.id) ?? 0) ? b : a,
+  ).id;
+}
