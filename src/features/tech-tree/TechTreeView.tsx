@@ -35,7 +35,7 @@ export function TechTreeView() {
     const v = nodeVisual(n.state, n.isRomanceNode);
     const t = NODE_TOKEN[v];
     const p = posById.get(n.id) ?? { x: 0, y: 0 };
-    const learnable = canLearn(n.state);
+    const learnable = canLearn(n.state, n.isRomanceNode);
     return {
       id: n.id,
       position: { x: p.x, y: p.y },
