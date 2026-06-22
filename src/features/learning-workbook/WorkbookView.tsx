@@ -70,7 +70,9 @@ export function WorkbookView() {
       <h1>{problem?.title ?? slug}</h1>
 
       {loadError && (
-        <p className="muted">問題を読み込めませんでした。少し待って開き直してください。</p>
+        <p className="muted">
+          問題を読み込めませんでした。少し待って開き直してください。
+        </p>
       )}
 
       {problem && (
@@ -82,15 +84,17 @@ export function WorkbookView() {
             </math-field>
           </div>
           {firstHint && <p className="muted">ヒント: {firstHint}</p>}
-          {problem.trivia && (
-            <p className="trivia">💡 {problem.trivia}</p>
-          )}
+          {problem.trivia && <p className="trivia">💡 {problem.trivia}</p>}
         </>
       )}
 
       {/* 解答入力 */}
-      <label className="muted answer-label">あなたの答え（途中式）</label>
+      <label className="answer-label">計算の途中を書いて答え合わせ</label>
+      <p className="muted answer-help">
+        計算の経過を「=」でつないで書けます（例: -3+5 = 2）
+      </p>
       <math-field
+        class="answer-field"
         onInput={(e: any) => setLatex(e.target.value)}
         style={{ fontSize: 22 }}
       />
