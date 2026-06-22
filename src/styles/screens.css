@@ -126,6 +126,36 @@
   color: var(--text);
 }
 
+/* 問題文（読み取り専用数式） */
+.problem-statement {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin: 4px 0 14px;
+}
+.problem-statement math-field {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text);
+}
+/* 豆知識 */
+.trivia {
+  background: color-mix(in srgb, var(--info) 12%, var(--surface));
+  border-left: 3px solid var(--info);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin: 12px 0;
+  line-height: 1.7;
+}
+/* 解答ラベル */
+.answer-label {
+  display: block;
+  margin: 16px 0 6px;
+  font-weight: 600;
+}
+
 /* ---- 入口リード文（O41「これは何？」）---- */
 .lead {
   max-width: 620px;
