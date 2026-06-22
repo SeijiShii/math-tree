@@ -86,3 +86,4 @@
 ## 6. 変更履歴
 - 2026-06-20: /flow:concept で初回生成
 - 2026-06-22 revise C20260622-007（本番・Phase1-4 デプロイ済/Phase5 key-gated）: ツリーを中学〜高校数I・A（~40-50単元）へ広大化する **AI 全生成パイプライン**を実装。generateUnits(AIツリー生成→循環検出→クロス検証→verified追記)+generateProblems(AI生成→CAS一次チェック→多段クロス検証→成長プール追記)+runGeneration(bootstrap+top-up)+Vercel Cron 日次(CRON_SECRET)+バッチ。181 tests green、関数10/12。Cron は本番で dormant(401, キー未設定で無害)。**Phase5(本番手番)**: prod env に ANTHROPIC_API_KEY+CRON_SECRET+CURRICULUM_MODELS 設定→デプロイ→`npm run generate:curriculum`(実AIコスト)→広大ツリー実検証。新鮮さ=プール成長×ランダム出題(C20260622-006)で再挑戦に別問題
+- 2026-06-22 revise C20260622-008（本番反映済）: tech-tree UI 改善 — ①現在地（進捗フロンティア=解放済み最深）を初期 zoom=0.85 で中心表示（pickCurrentNodeId + useReactFlow setCenter、57単元の fitView 極小を解消）②エッジを selectable/focusable/interactionWidth 無効化（クリック選択不可の装飾線化）。185 tests green、表示のみ変更で互換維持
