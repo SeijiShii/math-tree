@@ -3,8 +3,8 @@
 **issue / slug**: C20260622-001 / node-click-minimap
 **重大度**: high
 **実施日**: 2026-06-22
-**状態**: 修正計画済（→ tdd 実装へ）
-<!-- ticket-status: designed | updated: 20260622 -->
+**状態**: 実装完了（2026-06-22）
+<!-- ticket-status: implemented | updated: 20260622 | ref: 101 -->
 
 ## ファイル一覧
 | 番号 | ファイル | 種別 | 最終更新 |
