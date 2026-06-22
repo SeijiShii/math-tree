@@ -84,3 +84,80 @@ export async function getProblemForLearning(
     steps: ss.map((s: any) => ({ order: s.order, hint: s.hint ?? null })),
   };
 }
+
+// 特定 problemId のステップ模範解答を取得（複数問題プールの採点用、server-only SEC-002）。
+export async function getStepByProblemId(
+  db: Db,
+  problemId: string,
+  stepIndex: number,
+): Promise<GradingStep | null> {
+  const s = await db
+    .select()
+    .from(steps)
+    .where(and(eq(steps.problemId, problemId), eq(steps.order, stepIndex)))
+    .limit(1);
+  if (!s[0]) return null;
+  return { modelAnswerLatex: s[0].modelAnswerLatex, hint: s[0].hint ?? null };
+}
+
+// 学習セッション用に、単元の verified 問題プールから count 問をランダム抽出（模範解答非含 SEC-002）。
+export interface SessionProblem {
+  problemId: string;
+  statementLatex: string;
+  steps: LearningStepPrompt[];
+}
+
+function shuffle<T>(arr: T[]): T[] {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+export async function getProblemsForSession(
+  db: Db,
+  slug: string,
+  count: number,
+): Promise<{
+  title: string;
+  trivia: string;
+  problems: SessionProblem[];
+} | null> {
+  const u = await db
+    .select()
+    .from(units)
+    .where(and(eq(units.slug, slug), eq(units.verificationStatus, "verified")))
+    .limit(1);
+  if (!u[0]) return null;
+  const ps = await db
+    .select()
+    .from(problems)
+    .where(
+      and(
+        eq(problems.unitId, u[0].id),
+        eq(problems.verificationStatus, "verified"),
+      ),
+    )
+    .orderBy(asc(problems.order));
+  if (ps.length === 0) return null;
+  const picked = shuffle(ps as any[]).slice(
+    0,
+    Math.max(1, Math.min(count, ps.length)),
+  );
+  const out: SessionProblem[] = [];
+  for (const p of picked as any[]) {
+    const ss = await db
+      .select()
+      .from(steps)
+      .where(eq(steps.problemId, p.id))
+      .orderBy(asc(steps.order));
+    out.push({
+      problemId: p.id,
+      statementLatex: p.statementLatex,
+      steps: ss.map((s: any) => ({ order: s.order, hint: s.hint ?? null })),
+    });
+  }
+  return { title: u[0].title, trivia: u[0].trivia, problems: out };
+}

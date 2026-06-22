@@ -50,3 +50,21 @@ describe("areEquivalent（既存）", () => {
     expect(areEquivalent("3+2x", "2x+3")).toBe(true);
   });
 });
+
+describe("areEquivalent 分配・展開（C20260622-006 rationalize）", () => {
+  it("分配法則: 3(2x-1) ≡ 6x-3", () => {
+    expect(areEquivalent("3(2x-1)", "6x-3")).toBe(true);
+    expect(areEquivalent("2(x+4)", "2x+8")).toBe(true);
+  });
+  it("式の展開: (x+2)(x+1) ≡ x^2+3x+2", () => {
+    expect(areEquivalent("(x+2)(x+1)", "x^2+3x+2")).toBe(true);
+    expect(areEquivalent("(x-2)(x-3)", "x^2-5x+6")).toBe(true);
+  });
+  it("展開の上付き表記 x^{2} も解釈する", () => {
+    expect(areEquivalent("(x+1)(x+1)", "x^{2}+2x+1")).toBe(true);
+  });
+  it("誤答は false", () => {
+    expect(areEquivalent("3(2x-1)", "6x-2")).toBe(false);
+    expect(areEquivalent("(x+2)(x+1)", "x^2+3x+3")).toBe(false);
+  });
+});

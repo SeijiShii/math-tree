@@ -4,7 +4,7 @@
 import type { AiClient } from "../../lib/ai/types";
 import { gradeProcess } from "./equivalence";
 import { gradeStep, type GradeResult } from "./gradeStep";
-import { getStepForGrading } from "../../../db/grading";
+import { getStepForGrading, getStepByProblemId } from "../../../db/grading";
 
 type Db = any;
 
@@ -14,10 +14,13 @@ export interface GradeAnswerResult extends GradeResult {
 
 export async function gradeAnswer(
   db: Db,
-  input: { slug: string; stepIndex: number; latex: string },
+  input: { slug: string; problemId?: string; stepIndex: number; latex: string },
   ai: AiClient | null,
 ): Promise<GradeAnswerResult> {
-  const step = await getStepForGrading(db, input.slug, input.stepIndex);
+  // problemId 指定があればその問題を採点。無指定は先頭問題（後方互換）。
+  const step = input.problemId
+    ? await getStepByProblemId(db, input.problemId, input.stepIndex)
+    : await getStepForGrading(db, input.slug, input.stepIndex);
   if (!step) return { found: false, match: false, viaAi: false };
 
   // 途中経過（イコールチェーン）をそのまま採点する。

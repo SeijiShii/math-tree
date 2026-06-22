@@ -29,6 +29,7 @@ console.log(`schema applied (${stmts.length} statements)`)
 const data = JSON.parse(readFileSync(join(root, 'db/seed-data.json'), 'utf8'))
 let inserted = 0
 let skipped = 0
+let replaced = 0
 for (const u of data.units) {
   await sql.query(
     'INSERT INTO units (slug,title,systemic_line,description,trivia,is_romance_node,verification_status) VALUES ($1,$2,$3,$4,$5,$6,$7) ON CONFLICT (slug) DO NOTHING',
@@ -36,12 +37,16 @@ for (const u of data.units) {
   )
   const urow = await sql.query('SELECT id FROM units WHERE slug=$1', [u.slug])
   const unitId = urow[0].id
+  // 問題プールを seed-data に同期（複数問題対応, C20260622-006）。
+  //   problems/steps はユーザーデータを参照しない（progress は unit_id 参照）ため、
+  //   既存問題を削除（steps は cascade）して現行プールを入れ直す = 再実行で最新に揃う。
   const pc = await sql.query('SELECT count(*)::int AS c FROM problems WHERE unit_id=$1', [unitId])
   if (pc[0].c > 0) {
-    skipped++
-    continue
+    await sql.query('DELETE FROM problems WHERE unit_id=$1', [unitId])
+    replaced++
+  } else {
+    inserted++
   }
-  inserted++
   for (let pi = 0; pi < u.problems.length; pi++) {
     const p = u.problems[pi]
     const pr = await sql.query(
@@ -66,5 +71,6 @@ for (const [from, to] of data.edges) {
   )
 }
 const total = await sql.query('SELECT count(*)::int AS c FROM units')
-console.log(`seed done: inserted ${inserted} units, skipped ${skipped} (total units now ${total[0].c})`)
+const pcount = await sql.query('SELECT count(*)::int AS c FROM problems')
+console.log(`seed done: inserted ${inserted} units, replaced-pool ${replaced} units, skipped ${skipped} (units now ${total[0].c}, problems now ${pcount[0].c})`)
 await pool.end()

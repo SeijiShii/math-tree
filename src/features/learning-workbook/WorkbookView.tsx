@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { configureMathlive } from "../../lib/mathlive-setup";
 import { Button } from "../../components/ui/Button";
 import { SupportButton } from "../support/SupportButton";
 import { apiFetch } from "../../lib/api/client";
+import { scorePercent, passed, PASS_RATE } from "../../lib/learning/session";
 
 // MathLive のフォント配信パスを固定（/assets/fonts 推定での 404 を防ぐ、C20260622-002）。
-// チャンク読込時に 1 度だけ実行 = math-field の初回 render より前。
 configureMathlive();
 
 declare global {
@@ -18,68 +18,109 @@ declare global {
   }
 }
 
-interface LearningProblem {
-  slug: string;
-  title: string;
-  trivia: string;
+interface SessionProblem {
+  problemId: string;
   statementLatex: string;
   steps: { order: number; hint: string | null }[];
+}
+interface Session {
+  title: string;
+  trivia: string;
+  problems: SessionProblem[];
 }
 
 export function WorkbookView() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const [problem, setProblem] = useState<LearningProblem | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const [loadError, setLoadError] = useState(false);
+  const [idx, setIdx] = useState(0); // 現在の問題
+  const [correct, setCorrect] = useState(0); // 正答数
   const [latex, setLatex] = useState("");
-  const [result, setResult] = useState<string | null>(null);
-  const [mastered, setMastered] = useState<{ unlockedNext: number } | null>(
+  const [judged, setJudged] = useState<{ ok: boolean; msg: string } | null>(
     null,
-  );
+  ); // 現問題の採点結果
+  const [done, setDone] = useState<null | {
+    pass: boolean;
+    unlockedNext: number;
+  }>(null);
+  const [fieldKey, setFieldKey] = useState(0); // 入力欄リセット用
 
-  // 問題文を取得して表示（SPEC §6.1、模範解答は含まれない）。
-  useEffect(() => {
+  const loadSession = useCallback(() => {
     if (!slug) return;
-    let alive = true;
-    setProblem(null);
+    setSession(null);
     setLoadError(false);
+    setIdx(0);
+    setCorrect(0);
+    setLatex("");
+    setJudged(null);
+    setDone(null);
+    setFieldKey((k) => k + 1);
     apiFetch(`/api/problem?slug=${encodeURIComponent(slug)}`)
       .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((p) => alive && setProblem(p))
-      .catch(() => alive && setLoadError(true));
-    return () => {
-      alive = false;
-    };
+      .then((s) => setSession(s))
+      .catch(() => setLoadError(true));
   }, [slug]);
 
+  useEffect(() => {
+    loadSession();
+  }, [loadSession]);
+
+  const total = session?.problems.length ?? 0;
+  const cur = session?.problems[idx];
+  const answered = idx + (judged ? 1 : 0); // 採点済みの数
+
   async function grade() {
+    if (!cur || judged) return;
     const r = await apiFetch("/api/grade-step", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ slug, stepIndex: 0, latex }),
+      body: JSON.stringify({
+        slug,
+        problemId: cur.problemId,
+        stepIndex: 0,
+        latex,
+      }),
     })
-      .then((r) => r.json())
+      .then((res) => res.json())
       .catch(() => null);
-    if (r?.match) {
-      // MVP は 1 単元 = 1 ステップ。正解 = 習得 → 次ノードをアンロックして完了画面へ。
+    const ok = !!r?.match;
+    if (ok) setCorrect((c) => c + 1);
+    setJudged({
+      ok,
+      msg: ok ? "正解！" : (r?.hint ?? "惜しい、見直してみましょう"),
+    });
+  }
+
+  async function next() {
+    if (idx + 1 < total) {
+      setIdx((i) => i + 1);
+      setLatex("");
+      setJudged(null);
+      setFieldKey((k) => k + 1);
+      return;
+    }
+    // 最終問題 → セッション終了。合格なら習得→アンロック。
+    const finalCorrect = correct; // grade() で加算済み
+    if (passed(finalCorrect, total)) {
       const m = await apiFetch(
         `/api/master?slug=${encodeURIComponent(slug ?? "")}`,
         { method: "POST" },
       )
         .then((res) => (res.ok ? res.json() : null))
         .catch(() => null);
-      setResult(null);
-      setMastered({ unlockedNext: m?.unlockedNext?.length ?? 0 });
+      setDone({ pass: true, unlockedNext: m?.unlockedNext?.length ?? 0 });
     } else {
-      setResult(r?.hint ?? "惜しい、見直してみましょう");
+      setDone({ pass: false, unlockedNext: 0 });
     }
   }
 
-  const firstHint = problem?.steps?.[0]?.hint ?? null;
+  const curHint = cur?.steps?.[0]?.hint ?? null;
+  const passPct = Math.round(PASS_RATE * 100);
 
   return (
     <section className="workbook">
-      <h1>{problem?.title ?? slug}</h1>
+      <h1>{session?.title ?? slug}</h1>
 
       {loadError && (
         <p className="muted">
@@ -87,51 +128,96 @@ export function WorkbookView() {
         </p>
       )}
 
-      {problem && (
-        <>
-          {/* 問題文（読み取り専用の数式表示） */}
-          <div className="problem-statement">
-            <math-field read-only style={{ fontSize: 24 }}>
-              {problem.statementLatex}
-            </math-field>
+      {done ? (
+        done.pass ? (
+          <div className="mastered-panel">
+            <p className="mastered-title">習得しました 🎉</p>
+            <p className="muted">
+              {correct} / {total} 正解（{scorePercent(correct, total)}点）。
+              {done.unlockedNext > 0
+                ? "次の単元が開きました。テックツリーから続けて学べます。"
+                : "この系統はここまでです。テックツリーで全体を確認できます。"}
+            </p>
+            <Button variant="accent" onClick={() => navigate("/")}>
+              テックツリーに戻る
+            </Button>
           </div>
-          {firstHint && <p className="muted">ヒント: {firstHint}</p>}
-          {problem.trivia && <p className="trivia">💡 {problem.trivia}</p>}
-        </>
-      )}
-
-      {mastered ? (
-        /* 習得 → 完了。次ノードがアンロックされたのでテックツリーへ戻る導線。 */
-        <div className="mastered-panel">
-          <p className="mastered-title">習得しました 🎉</p>
-          <p className="muted">
-            {mastered.unlockedNext > 0
-              ? "次の単元が開きました。テックツリーから続けて学べます。"
-              : "この系統はここまでです。テックツリーで全体を確認できます。"}
-          </p>
-          <Button variant="accent" onClick={() => navigate("/")}>
-            テックツリーに戻る
-          </Button>
-        </div>
+        ) : (
+          <div className="failed-panel">
+            <p className="failed-title">
+              合格まであと少し（{scorePercent(correct, total)}点 / 合格 {passPct}
+              点）
+            </p>
+            <p className="muted">
+              {correct} / {total}{" "}
+              正解でした。問題はランダムに選ばれます。もう一度挑戦しましょう。
+            </p>
+            <Button variant="primary" onClick={loadSession}>
+              もう一度挑戦する
+            </Button>
+            <Button variant="ghost" onClick={() => navigate("/")}>
+              テックツリーに戻る
+            </Button>
+          </div>
+        )
       ) : (
-        <>
-          {/* 解答入力 */}
-          <label className="answer-label">計算の途中を書いて答え合わせ</label>
-          <p className="muted answer-help">
-            計算の経過を「=」でつないで書けます（例: -3+5 = 2）
-          </p>
-          <math-field
-            class="answer-field"
-            onInput={(e: any) => setLatex(e.target.value)}
-            style={{ fontSize: 22 }}
-          />
-          <Button variant="primary" onClick={grade}>
-            答え合わせ
-          </Button>
-          {result && <p className="result">{result}</p>}
-        </>
+        session &&
+        cur && (
+          <>
+            {/* 進捗 + ライブスコア */}
+            <div className="session-progress">
+              <span>
+                第 {idx + 1} 問 / 全 {total} 問
+              </span>
+              <span className="score-badge">
+                現在 {correct} / {answered} 正解
+              </span>
+            </div>
+
+            {/* 問題文（読み取り専用） */}
+            <div className="problem-statement">
+              <math-field read-only style={{ fontSize: 24 }} key={`q${idx}`}>
+                {cur.statementLatex}
+              </math-field>
+            </div>
+            {curHint && <p className="muted">ヒント: {curHint}</p>}
+            {idx === 0 && session.trivia && (
+              <p className="trivia">💡 {session.trivia}</p>
+            )}
+
+            {/* 解答入力 / 採点結果 */}
+            {!judged ? (
+              <>
+                <label className="answer-label">
+                  計算の途中を書いて答え合わせ
+                </label>
+                <p className="muted answer-help">
+                  計算の経過を「=」でつないで書けます（例: -3+5 = 2）
+                </p>
+                <math-field
+                  class="answer-field"
+                  key={`a${fieldKey}`}
+                  onInput={(e: any) => setLatex(e.target.value)}
+                  style={{ fontSize: 22 }}
+                />
+                <Button variant="primary" onClick={grade}>
+                  答え合わせ
+                </Button>
+              </>
+            ) : (
+              <>
+                <p className={judged.ok ? "result result-ok" : "result"}>
+                  {judged.msg}
+                </p>
+                <Button variant="accent" onClick={next}>
+                  {idx + 1 < total ? "次の問題へ" : "結果を見る"}
+                </Button>
+              </>
+            )}
+          </>
+        )
       )}
-      {/* tip-jar は Stripe 配線時のみ表示（VITE_ENABLE_TIPJAR）。ゲスト専用 MVP では非表示 */}
+      {/* tip-jar は Stripe 配線時のみ表示（VITE_ENABLE_TIPJAR）。 */}
       {import.meta.env.VITE_ENABLE_TIPJAR === "true" && <SupportButton />}
     </section>
   );

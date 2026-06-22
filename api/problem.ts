@@ -1,8 +1,10 @@
 import { db, ownerFrom, send401If } from './_handler'
-import { getProblemForLearning } from '../db/grading'
+import { getProblemsForSession } from '../db/grading'
+import { SESSION_SIZE } from '../src/lib/learning/session'
 
-// 学習画面用の問題取得（SPEC §6.1 GET /api/units/:slug/problem）。
-//   owner 強制（SEC-001）→ verified のみ（SEC-005）→ modelAnswerLatex 非含（SEC-002）。
+// 学習セッション用の問題取得（SPEC §6.1 + C20260622-006）。
+//   owner 強制（SEC-001）→ verified のみ（SEC-005）→ プールから K 問ランダム（模範解答非含 SEC-002）。
+//   返却: { title, trivia, problems: [{ problemId, statementLatex, steps[order,hint] }] }
 export default async function handler(req: any, res: any) {
   try {
     await ownerFrom(req)
@@ -15,10 +17,10 @@ export default async function handler(req: any, res: any) {
     res.status(400).json({ error: 'Bad Request' })
     return
   }
-  const problem = await getProblemForLearning(db(), slug)
-  if (!problem) {
+  const session = await getProblemsForSession(db(), slug, SESSION_SIZE)
+  if (!session) {
     res.status(404).json({ error: 'Not Found' })
     return
   }
-  res.status(200).json(problem)
+  res.status(200).json(session)
 }

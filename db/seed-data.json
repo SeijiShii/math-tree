@@ -8,9 +8,106 @@
       "trivia": "負の数は7世紀インドの数学者ブラフマグプタが「借金」を表すのに使い始めたと言われます。",
       "isRomanceNode": false,
       "problems": [
-        { "statementLatex": "(-3)+5", "steps": [
-          { "order": 0, "modelAnswerLatex": "2", "hint": "符号に注意して計算しよう。" }
-        ] }
+        {
+          "statementLatex": "(-3)+5",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "2",
+              "hint": "符号に注意して計算しよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(-7)+4",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "-3",
+              "hint": "符号に注意して計算しよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "6+(-9)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "-3",
+              "hint": "符号に注意して計算しよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(-2)-(-5)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "3",
+              "hint": "符号に注意して計算しよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "8-12",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "-4",
+              "hint": "符号に注意して計算しよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(-4)+(-3)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "-7",
+              "hint": "符号に注意して計算しよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "5-(-2)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "7",
+              "hint": "符号に注意して計算しよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(-10)+6",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "-4",
+              "hint": "符号に注意して計算しよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "3-7",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "-4",
+              "hint": "符号に注意して計算しよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(-6)-2",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "-8",
+              "hint": "符号に注意して計算しよう。"
+            }
+          ]
+        }
       ]
     },
     {
@@ -20,9 +117,106 @@
       "trivia": "未知数に x を使う習慣は17世紀のデカルトが広めました。",
       "isRomanceNode": false,
       "problems": [
-        { "statementLatex": "3x+2x", "steps": [
-          { "order": 0, "modelAnswerLatex": "5x", "hint": "x の個数をたし合わせよう。" }
-        ] }
+        {
+          "statementLatex": "3x+2x",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "5x",
+              "hint": "同じ文字の個数をたし引きしよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "4x+x",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "5x",
+              "hint": "同じ文字の個数をたし引きしよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "7a-2a",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "5a",
+              "hint": "同じ文字の個数をたし引きしよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "5y+3y",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "8y",
+              "hint": "同じ文字の個数をたし引きしよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "6x-4x",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "2x",
+              "hint": "同じ文字の個数をたし引きしよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "2x+5x",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "7x",
+              "hint": "同じ文字の個数をたし引きしよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "9a-a",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "8a",
+              "hint": "同じ文字の個数をたし引きしよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "3b+4b",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "7b",
+              "hint": "同じ文字の個数をたし引きしよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "8y-3y",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "5y",
+              "hint": "同じ文字の個数をたし引きしよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "x+6x",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "7x",
+              "hint": "同じ文字の個数をたし引きしよう。"
+            }
+          ]
+        }
       ]
     },
     {
@@ -32,9 +226,106 @@
       "trivia": "分配法則 a(b+c)=ab+ac は面積の考え方そのものです。",
       "isRomanceNode": false,
       "problems": [
-        { "statementLatex": "3(2x-1)", "steps": [
-          { "order": 0, "modelAnswerLatex": "6x-3", "hint": "3 を 2x と -1 の両方にかけよう。" }
-        ] }
+        {
+          "statementLatex": "3(2x-1)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "6x-3",
+              "hint": "かっこの外の数を、中の項すべてにかけよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "2(x+4)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "2x+8",
+              "hint": "かっこの外の数を、中の項すべてにかけよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "4(x-2)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "4x-8",
+              "hint": "かっこの外の数を、中の項すべてにかけよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "5(2x+1)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "10x+5",
+              "hint": "かっこの外の数を、中の項すべてにかけよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "3(x+3)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "3x+9",
+              "hint": "かっこの外の数を、中の項すべてにかけよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "2(3x-2)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "6x-4",
+              "hint": "かっこの外の数を、中の項すべてにかけよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "4(2x+3)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "8x+12",
+              "hint": "かっこの外の数を、中の項すべてにかけよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "6(x-1)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "6x-6",
+              "hint": "かっこの外の数を、中の項すべてにかけよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "5(x+2)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "5x+10",
+              "hint": "かっこの外の数を、中の項すべてにかけよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "3(3x-1)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "9x-3",
+              "hint": "かっこの外の数を、中の項すべてにかけよう。"
+            }
+          ]
+        }
       ]
     },
     {
@@ -44,9 +335,106 @@
       "trivia": "「方程式」という言葉は中国の数学書『九章算術』に由来します。",
       "isRomanceNode": true,
       "problems": [
-        { "statementLatex": "2x+1=7", "steps": [
-          { "order": 0, "modelAnswerLatex": "3", "hint": "両辺から 1 を引いて、2 で割ろう。x の値だけ入力してね。" }
-        ] }
+        {
+          "statementLatex": "2x+1=7",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "3",
+              "hint": "両辺を整理して x の値を求めよう。x の値だけ入力してね。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "3x-2=7",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "3",
+              "hint": "両辺を整理して x の値を求めよう。x の値だけ入力してね。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "2x+3=11",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "4",
+              "hint": "両辺を整理して x の値を求めよう。x の値だけ入力してね。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "4x-1=11",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "3",
+              "hint": "両辺を整理して x の値を求めよう。x の値だけ入力してね。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "x+5=9",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "4",
+              "hint": "両辺を整理して x の値を求めよう。x の値だけ入力してね。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "3x=12",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "4",
+              "hint": "両辺を整理して x の値を求めよう。x の値だけ入力してね。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "2x-4=6",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "5",
+              "hint": "両辺を整理して x の値を求めよう。x の値だけ入力してね。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "5x+2=12",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "2",
+              "hint": "両辺を整理して x の値を求めよう。x の値だけ入力してね。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "x-3=4",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "7",
+              "hint": "両辺を整理して x の値を求めよう。x の値だけ入力してね。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "4x+4=20",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "4",
+              "hint": "両辺を整理して x の値を求めよう。x の値だけ入力してね。"
+            }
+          ]
+        }
       ]
     },
     {
@@ -56,16 +444,125 @@
       "trivia": "展開と因数分解は逆の操作。行き来できると式が自由になります。",
       "isRomanceNode": false,
       "problems": [
-        { "statementLatex": "(x+2)(x+1)", "steps": [
-          { "order": 0, "modelAnswerLatex": "x^2+3x+2", "hint": "それぞれの項をすべてかけ合わせてまとめよう。" }
-        ] }
+        {
+          "statementLatex": "(x+2)(x+1)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "x^2+3x+2",
+              "hint": "それぞれの項をすべてかけ合わせてまとめよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(x+3)(x+2)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "x^2+5x+6",
+              "hint": "それぞれの項をすべてかけ合わせてまとめよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(x+1)(x+4)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "x^2+5x+4",
+              "hint": "それぞれの項をすべてかけ合わせてまとめよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(x+2)(x+4)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "x^2+6x+8",
+              "hint": "それぞれの項をすべてかけ合わせてまとめよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(x-1)(x+2)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "x^2+x-2",
+              "hint": "それぞれの項をすべてかけ合わせてまとめよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(x+5)(x+1)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "x^2+6x+5",
+              "hint": "それぞれの項をすべてかけ合わせてまとめよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(x-2)(x-3)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "x^2-5x+6",
+              "hint": "それぞれの項をすべてかけ合わせてまとめよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(x+4)(x-1)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "x^2+3x-4",
+              "hint": "それぞれの項をすべてかけ合わせてまとめよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(x+1)(x+1)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "x^2+2x+1",
+              "hint": "それぞれの項をすべてかけ合わせてまとめよう。"
+            }
+          ]
+        },
+        {
+          "statementLatex": "(x-3)(x+1)",
+          "steps": [
+            {
+              "order": 0,
+              "modelAnswerLatex": "x^2-2x-3",
+              "hint": "それぞれの項をすべてかけ合わせてまとめよう。"
+            }
+          ]
+        }
       ]
     }
   ],
   "edges": [
-    ["seisu-no-keisan", "moji-shiki"],
-    ["moji-shiki", "bunpai"],
-    ["bunpai", "ichiji-houteishiki"],
-    ["bunpai", "tenkai"]
+    [
+      "seisu-no-keisan",
+      "moji-shiki"
+    ],
+    [
+      "moji-shiki",
+      "bunpai"
+    ],
+    [
+      "bunpai",
+      "ichiji-houteishiki"
+    ],
+    [
+      "bunpai",
+      "tenkai"
+    ]
   ]
 }
