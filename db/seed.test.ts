@@ -33,9 +33,14 @@ describe("seedCurriculum (starter カリキュラム)", () => {
     expect(pub.length).toBe((seedData as SeedData).units.length);
   });
 
-  it("N3: 各 unit の step0 が CAS で採点でき、模範解答が正解判定される", async () => {
+  it("N3: 問題を持つ unit の step0 が CAS で採点でき、模範解答が正解判定される", async () => {
     await seedCurriculum(db, seedData as SeedData);
-    for (const u of (seedData as SeedData).units) {
+    // 問題プールを持つ単元のみ検証（C20260622-007: 広大ツリーの表示専用単元は問題が AI 生成で後充填）
+    const withProblems = (seedData as SeedData).units.filter(
+      (u) => u.problems.length > 0,
+    );
+    expect(withProblems.length).toBeGreaterThan(0);
+    for (const u of withProblems) {
       const model = u.problems[0].steps[0].modelAnswerLatex;
       const r = await gradeAnswer(
         db,

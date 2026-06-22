@@ -1,11 +1,11 @@
 {
-  "systemicLine": "中1 数学",
+  "systemicLine": "中学〜高校数学（数I・A）",
   "units": [
     {
       "slug": "seisu-no-keisan",
       "title": "正負の数の計算",
-      "description": "正の数・負の数のたし算とかけ算。符号のルールに慣れよう。",
-      "trivia": "負の数は7世紀インドの数学者ブラフマグプタが「借金」を表すのに使い始めたと言われます。",
+      "description": "負の数を含む四則計算",
+      "trivia": "負の数は7世紀インドのブラフマグプタが「借金」を表すのに使い始めたと言われます。",
       "isRomanceNode": false,
       "problems": [
         {
@@ -113,8 +113,8 @@
     {
       "slug": "moji-shiki",
       "title": "文字式の計算",
-      "description": "同じ文字の項をまとめる。x が何個分かを数える感覚をつかもう。",
-      "trivia": "未知数に x を使う習慣は17世紀のデカルトが広めました。",
+      "description": "文字を使った式の整理・同類項",
+      "trivia": "文字で数を表す記法はデカルトが広めました。未知数に x を使う習慣も彼に由来します。",
       "isRomanceNode": false,
       "problems": [
         {
@@ -222,8 +222,8 @@
     {
       "slug": "bunpai",
       "title": "分配法則",
-      "description": "かっこの外の数を中のすべての項にかける。",
-      "trivia": "分配法則 a(b+c)=ab+ac は面積の考え方そのものです。",
+      "description": "かっこを展開する分配法則",
+      "trivia": "分配法則 a(b+c)=ab+ac は古代から面積の考えで説明されてきました。",
       "isRomanceNode": false,
       "problems": [
         {
@@ -331,9 +331,9 @@
     {
       "slug": "ichiji-houteishiki",
       "title": "一次方程式",
-      "description": "x の値を求める。2x+1=7 のとき x はいくつ？（値だけ入力）",
-      "trivia": "「方程式」という言葉は中国の数学書『九章算術』に由来します。",
-      "isRomanceNode": true,
+      "description": "等式を解いて未知数を求める",
+      "trivia": "「方程式」という語は中国古典『九章算術』に由来します。",
+      "isRomanceNode": false,
       "problems": [
         {
           "statementLatex": "2x+1=7",
@@ -438,10 +438,90 @@
       ]
     },
     {
+      "slug": "hirei-hanpirei",
+      "title": "比例と反比例",
+      "description": "量の比例・反比例関係",
+      "trivia": "反比例 y=a/x のグラフ（双曲線）は円錐を斜めに切った断面でも現れます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "heimen-zukei",
+      "title": "平面図形",
+      "description": "作図・角・図形の基本",
+      "trivia": "コンパスと定規だけの作図は古代ギリシャ以来の伝統です。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "kukan-zukei",
+      "title": "空間図形",
+      "description": "立体・体積・表面積",
+      "trivia": "球の体積はアルキメデスが円柱との比 2:3 で求めました。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "shiryo-seiri",
+      "title": "資料の整理",
+      "description": "度数分布・代表値",
+      "trivia": "平均・中央値・最頻値は「代表値」と呼ばれ、データの特徴を1つの数で表します。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "takoushiki-keisan",
+      "title": "式の計算（多項式）",
+      "description": "多項式の加減・単項式の乗除",
+      "trivia": "多項式 (polynomial) の poly は「多くの」という意味のギリシャ語です。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "renritsu-houteishiki",
+      "title": "連立方程式",
+      "description": "2つの式を同時に満たす解",
+      "trivia": "連立方程式の解法（消去法）も『九章算術』に登場します。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "ichiji-kansuu",
+      "title": "一次関数",
+      "description": "y=ax+b と直線のグラフ",
+      "trivia": "関数 (function) という語はライプニッツが導入しました。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "heikou-goudou",
+      "title": "平行と合同",
+      "description": "平行線の性質・三角形の合同",
+      "trivia": "「合同」は形も大きさも同じこと。記号 ≡ で表します。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "sankaku-shikaku",
+      "title": "三角形と四角形",
+      "description": "三角形・四角形の性質と証明",
+      "trivia": "三角形の内角の和が180°なのは平行線の錯角から証明できます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "kakuritsu-chu2",
+      "title": "確率",
+      "description": "場合の数と確率の基礎",
+      "trivia": "確率論はパスカルとフェルマーの賭けに関する手紙から生まれました。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
       "slug": "tenkai",
       "title": "式の展開",
-      "description": "(x+2)(x+1) のようなかっこの積を、ひとつの式に開く。",
-      "trivia": "展開と因数分解は逆の操作。行き来できると式が自由になります。",
+      "description": "多項式の積を展開する",
+      "trivia": "(a+b)²=a²+2ab+b² は正方形の面積図で説明できます。",
       "isRomanceNode": false,
       "problems": [
         {
@@ -545,6 +625,174 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "insuu-bunkai",
+      "title": "因数分解",
+      "description": "式を積の形に分解する",
+      "trivia": "因数分解は展開の逆。暗号(RSA)の安全性も巨大数の因数分解の難しさに依ります。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "heihoukon",
+      "title": "平方根",
+      "description": "√ と根号の計算",
+      "trivia": "√2 が無理数であることはピタゴラス学派が発見し、秘密にしたと伝わります。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "niji-houteishiki",
+      "title": "二次方程式",
+      "description": "解の公式・因数分解で解く",
+      "trivia": "二次方程式の解の公式はバビロニア時代から知られていました。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "niji-kansuu",
+      "title": "二次関数 y=ax²",
+      "description": "放物線のグラフ",
+      "trivia": "放物線は物を投げたときの軌跡。パラボラアンテナの断面でもあります。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "souji",
+      "title": "相似",
+      "description": "形が同じで大きさが違う図形",
+      "trivia": "相似比の2乗が面積比、3乗が体積比になります。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "en-no-seishitsu",
+      "title": "円の性質",
+      "description": "円周角・接線",
+      "trivia": "円周角の定理: 同じ弧に対する円周角は中心角の半分。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "sanheihou",
+      "title": "三平方の定理",
+      "description": "直角三角形の辺の関係",
+      "trivia": "a²+b²=c²。ピタゴラスの定理として有名ですが、それ以前から各地で知られていました。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "hyouhon-chousa",
+      "title": "標本調査",
+      "description": "母集団と標本",
+      "trivia": "世論調査や視聴率は標本調査。全部調べずに全体を推測します。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "kazu-to-shiki",
+      "title": "数と式（実数・絶対値）",
+      "description": "実数・絶対値・式の値",
+      "trivia": "絶対値 |x| は数直線上の原点からの距離を表します。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "ichiji-futoushiki",
+      "title": "一次不等式",
+      "description": "不等式を解く",
+      "trivia": "不等式の両辺に負の数を掛けると不等号の向きが変わります。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "shuugou-meidai",
+      "title": "集合と命題",
+      "description": "集合・必要十分条件",
+      "trivia": "集合論はカントールが創始。「無限にも大小がある」ことを示しました。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "niji-kansuu-koukou",
+      "title": "二次関数（最大最小）",
+      "description": "平方完成・最大最小",
+      "trivia": "平方完成で放物線の頂点が分かり、最大・最小を求められます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "hanbetsushiki",
+      "title": "二次方程式と判別式",
+      "description": "判別式 D で解の個数を判定",
+      "trivia": "判別式 D=b²-4ac の符号で実数解の個数が決まります。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "sankakuhi",
+      "title": "三角比",
+      "description": "sin・cos・tan",
+      "trivia": "三角比は測量・天文で発達。tan は「触れる(tangent=接線)」が語源。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "zukei-keiryou",
+      "title": "図形と計量",
+      "description": "正弦定理・余弦定理",
+      "trivia": "余弦定理は三平方の定理を一般の三角形に拡張したものです。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "data-bunseki",
+      "title": "データの分析",
+      "description": "分散・標準偏差・相関",
+      "trivia": "標準偏差はデータのばらつきの大きさ。偏差値もこれを使います。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "baai-no-kazu",
+      "title": "場合の数",
+      "description": "和の法則・積の法則",
+      "trivia": "数え上げの工夫が場合の数。樹形図が基本の道具です。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "junretsu-kumiawase",
+      "title": "順列と組合せ",
+      "description": "P と C",
+      "trivia": "順列 nPr は並べる、組合せ nCr は選ぶ。順序を区別するかが違いです。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "kakuritsu-koukou",
+      "title": "確率",
+      "description": "独立・条件付き確率",
+      "trivia": "条件付き確率はベイズ統計の基礎で、迷惑メール判定にも使われます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "seisuu-no-seishitsu",
+      "title": "整数の性質",
+      "description": "約数・倍数・合同式",
+      "trivia": "ユークリッドの互除法は最古のアルゴリズムの一つです。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "zukei-no-seishitsu",
+      "title": "図形の性質",
+      "description": "チェバ・メネラウスの定理",
+      "trivia": "チェバの定理は三角形の3直線が1点で交わる条件を与えます。",
+      "isRomanceNode": false,
+      "problems": []
     }
   ],
   "edges": [
@@ -561,8 +809,156 @@
       "ichiji-houteishiki"
     ],
     [
-      "bunpai",
+      "ichiji-houteishiki",
+      "hirei-hanpirei"
+    ],
+    [
+      "seisu-no-keisan",
+      "heimen-zukei"
+    ],
+    [
+      "heimen-zukei",
+      "kukan-zukei"
+    ],
+    [
+      "seisu-no-keisan",
+      "shiryo-seiri"
+    ],
+    [
+      "moji-shiki",
+      "takoushiki-keisan"
+    ],
+    [
+      "ichiji-houteishiki",
+      "renritsu-houteishiki"
+    ],
+    [
+      "hirei-hanpirei",
+      "ichiji-kansuu"
+    ],
+    [
+      "renritsu-houteishiki",
+      "ichiji-kansuu"
+    ],
+    [
+      "heimen-zukei",
+      "heikou-goudou"
+    ],
+    [
+      "heikou-goudou",
+      "sankaku-shikaku"
+    ],
+    [
+      "shiryo-seiri",
+      "kakuritsu-chu2"
+    ],
+    [
+      "takoushiki-keisan",
       "tenkai"
+    ],
+    [
+      "tenkai",
+      "insuu-bunkai"
+    ],
+    [
+      "tenkai",
+      "heihoukon"
+    ],
+    [
+      "insuu-bunkai",
+      "niji-houteishiki"
+    ],
+    [
+      "heihoukon",
+      "niji-houteishiki"
+    ],
+    [
+      "ichiji-kansuu",
+      "niji-kansuu"
+    ],
+    [
+      "heihoukon",
+      "niji-kansuu"
+    ],
+    [
+      "sankaku-shikaku",
+      "souji"
+    ],
+    [
+      "sankaku-shikaku",
+      "en-no-seishitsu"
+    ],
+    [
+      "souji",
+      "sanheihou"
+    ],
+    [
+      "kakuritsu-chu2",
+      "hyouhon-chousa"
+    ],
+    [
+      "heihoukon",
+      "kazu-to-shiki"
+    ],
+    [
+      "takoushiki-keisan",
+      "kazu-to-shiki"
+    ],
+    [
+      "kazu-to-shiki",
+      "ichiji-futoushiki"
+    ],
+    [
+      "kazu-to-shiki",
+      "shuugou-meidai"
+    ],
+    [
+      "niji-kansuu",
+      "niji-kansuu-koukou"
+    ],
+    [
+      "niji-houteishiki",
+      "hanbetsushiki"
+    ],
+    [
+      "niji-kansuu-koukou",
+      "hanbetsushiki"
+    ],
+    [
+      "sanheihou",
+      "sankakuhi"
+    ],
+    [
+      "sankakuhi",
+      "zukei-keiryou"
+    ],
+    [
+      "shiryo-seiri",
+      "data-bunseki"
+    ],
+    [
+      "hyouhon-chousa",
+      "data-bunseki"
+    ],
+    [
+      "kakuritsu-chu2",
+      "baai-no-kazu"
+    ],
+    [
+      "baai-no-kazu",
+      "junretsu-kumiawase"
+    ],
+    [
+      "junretsu-kumiawase",
+      "kakuritsu-koukou"
+    ],
+    [
+      "ichiji-houteishiki",
+      "seisuu-no-seishitsu"
+    ],
+    [
+      "en-no-seishitsu",
+      "zukei-no-seishitsu"
     ]
   ]
 }
