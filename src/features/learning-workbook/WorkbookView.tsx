@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import "mathlive";
+import { configureMathlive } from "../../lib/mathlive-setup";
 import { Button } from "../../components/ui/Button";
+
+// MathLive のフォント配信パスを固定（/assets/fonts 推定での 404 を防ぐ、C20260622-002）。
+// チャンク読込時に 1 度だけ実行 = math-field の初回 render より前。
+configureMathlive();
 import { SupportButton } from "../support/SupportButton";
 import { apiFetch } from "../../lib/api/client";
 
