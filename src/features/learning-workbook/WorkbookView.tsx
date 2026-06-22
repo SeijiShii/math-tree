@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { configureMathlive } from "../../lib/mathlive-setup";
 import { Button } from "../../components/ui/Button";
 import { SupportButton } from "../support/SupportButton";
@@ -28,10 +28,14 @@ interface LearningProblem {
 
 export function WorkbookView() {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const [problem, setProblem] = useState<LearningProblem | null>(null);
   const [loadError, setLoadError] = useState(false);
   const [latex, setLatex] = useState("");
   const [result, setResult] = useState<string | null>(null);
+  const [mastered, setMastered] = useState<{ unlockedNext: number } | null>(
+    null,
+  );
 
   // 問題文を取得して表示（SPEC §6.1、模範解答は含まれない）。
   useEffect(() => {
@@ -56,11 +60,19 @@ export function WorkbookView() {
     })
       .then((r) => r.json())
       .catch(() => null);
-    setResult(
-      r?.match
-        ? "正解。次のステップへ"
-        : (r?.hint ?? "惜しい、見直してみましょう"),
-    );
+    if (r?.match) {
+      // MVP は 1 単元 = 1 ステップ。正解 = 習得 → 次ノードをアンロックして完了画面へ。
+      const m = await apiFetch(
+        `/api/master?slug=${encodeURIComponent(slug ?? "")}`,
+        { method: "POST" },
+      )
+        .then((res) => (res.ok ? res.json() : null))
+        .catch(() => null);
+      setResult(null);
+      setMastered({ unlockedNext: m?.unlockedNext?.length ?? 0 });
+    } else {
+      setResult(r?.hint ?? "惜しい、見直してみましょう");
+    }
   }
 
   const firstHint = problem?.steps?.[0]?.hint ?? null;
@@ -88,20 +100,37 @@ export function WorkbookView() {
         </>
       )}
 
-      {/* 解答入力 */}
-      <label className="answer-label">計算の途中を書いて答え合わせ</label>
-      <p className="muted answer-help">
-        計算の経過を「=」でつないで書けます（例: -3+5 = 2）
-      </p>
-      <math-field
-        class="answer-field"
-        onInput={(e: any) => setLatex(e.target.value)}
-        style={{ fontSize: 22 }}
-      />
-      <Button variant="primary" onClick={grade}>
-        答え合わせ
-      </Button>
-      {result && <p className="result">{result}</p>}
+      {mastered ? (
+        /* 習得 → 完了。次ノードがアンロックされたのでテックツリーへ戻る導線。 */
+        <div className="mastered-panel">
+          <p className="mastered-title">習得しました 🎉</p>
+          <p className="muted">
+            {mastered.unlockedNext > 0
+              ? "次の単元が開きました。テックツリーから続けて学べます。"
+              : "この系統はここまでです。テックツリーで全体を確認できます。"}
+          </p>
+          <Button variant="accent" onClick={() => navigate("/")}>
+            テックツリーに戻る
+          </Button>
+        </div>
+      ) : (
+        <>
+          {/* 解答入力 */}
+          <label className="answer-label">計算の途中を書いて答え合わせ</label>
+          <p className="muted answer-help">
+            計算の経過を「=」でつないで書けます（例: -3+5 = 2）
+          </p>
+          <math-field
+            class="answer-field"
+            onInput={(e: any) => setLatex(e.target.value)}
+            style={{ fontSize: 22 }}
+          />
+          <Button variant="primary" onClick={grade}>
+            答え合わせ
+          </Button>
+          {result && <p className="result">{result}</p>}
+        </>
+      )}
       {/* tip-jar は Stripe 配線時のみ表示（VITE_ENABLE_TIPJAR）。ゲスト専用 MVP では非表示 */}
       {import.meta.env.VITE_ENABLE_TIPJAR === "true" && <SupportButton />}
     </section>
