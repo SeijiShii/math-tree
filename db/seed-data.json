@@ -793,6 +793,174 @@
       "trivia": "チェバの定理は三角形の3直線が1点で交わる条件を与えます。",
       "isRomanceNode": false,
       "problems": []
+    },
+    {
+      "slug": "shiki-to-shoumei",
+      "title": "式と証明",
+      "description": "二項定理・恒等式・不等式の証明",
+      "trivia": "二項定理の係数はパスカルの三角形に並びます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "fukusosuu",
+      "title": "複素数と方程式",
+      "description": "虚数 i と高次方程式",
+      "trivia": "i²=-1 の虚数はカルダノが三次方程式の解法で渋々導入しました。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "zukei-houteishiki",
+      "title": "図形と方程式",
+      "description": "直線・円を式で表す",
+      "trivia": "座標で図形を扱う解析幾何はデカルトとフェルマーが創始しました。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "kiseki-ryoiki",
+      "title": "軌跡と領域",
+      "description": "条件を満たす点の集合",
+      "trivia": "不等式の表す領域は線形計画法で最適化に使われます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "sankaku-kansuu",
+      "title": "三角関数",
+      "description": "sin・cos の周期関数",
+      "trivia": "三角関数は波や振動の記述に不可欠。音や交流電流もこれで表せます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "shisuu-kansuu",
+      "title": "指数関数",
+      "description": "a^x と指数法則の拡張",
+      "trivia": "指数関数は複利計算や細菌の増殖など『倍々』の現象を表します。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "taisuu-kansuu",
+      "title": "対数関数",
+      "description": "log と指数の逆関数",
+      "trivia": "対数はネイピアが計算を楽にするため発明。地震のマグニチュードも対数尺度です。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "bibun",
+      "title": "微分法",
+      "description": "関数の変化率・接線",
+      "trivia": "微分はニュートンとライプニッツが独立に発見しました。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "sekibun",
+      "title": "積分法",
+      "description": "面積・原始関数",
+      "trivia": "積分は微分の逆。『微分積分学の基本定理』が両者を結びつけます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "suuretsu",
+      "title": "数列",
+      "description": "等差・等比・漸化式",
+      "trivia": "フィボナッチ数列は自然界（花びらや松ぼっくり）に多く現れます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "toukei-suisoku",
+      "title": "統計的な推測",
+      "description": "母集団推定・仮説検定",
+      "trivia": "推測統計は『一部から全体を確率的に推し量る』方法です。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "suugaku-shakai",
+      "title": "数学と社会生活",
+      "description": "数理モデルの活用",
+      "trivia": "待ち行列理論やゲーム理論など、数学は社会の意思決定にも使われます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "kansuu-kyokugen",
+      "title": "関数と極限",
+      "description": "分数・無理関数と極限",
+      "trivia": "『限りなく近づく』極限の厳密な定義（ε-δ）はコーシーらが整えました。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "bibun-3",
+      "title": "微分法（数III）",
+      "description": "合成・積・商の微分",
+      "trivia": "あらゆる関数を微分する道具（連鎖律など）が揃います。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "bibun-ouyou",
+      "title": "微分法の応用",
+      "description": "増減・凹凸・最大最小",
+      "trivia": "微分でグラフの形（増減・変曲点）を精密に描けます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "sekibun-3",
+      "title": "積分法（数III）",
+      "description": "置換・部分積分",
+      "trivia": "複雑な積分も置換積分・部分積分で計算できます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "sekibun-ouyou",
+      "title": "積分法の応用",
+      "description": "面積・体積・曲線の長さ",
+      "trivia": "回転体の体積も積分で求められます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "heimen-kyokusen",
+      "title": "平面上の曲線",
+      "description": "放物線・楕円・双曲線",
+      "trivia": "惑星の軌道は楕円（ケプラーの第一法則）。これらは円錐曲線の仲間です。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "vector",
+      "title": "ベクトル",
+      "description": "向きと大きさを持つ量",
+      "trivia": "ベクトルは力や速度の表現に不可欠。物理とコンピュータグラフィックスの基礎です。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "fukusosuu-heimen",
+      "title": "複素数平面",
+      "description": "複素数を平面上の点で表す",
+      "trivia": "複素数平面はガウスが整備。回転と拡大が掛け算1つで表せます。",
+      "isRomanceNode": false,
+      "problems": []
+    },
+    {
+      "slug": "baikai-kyokuzahyou",
+      "title": "媒介変数と極座標",
+      "description": "パラメータ表示・極座標",
+      "trivia": "極座標は『中心からの距離と角度』で点を表し、渦巻きなどを簡潔に書けます。",
+      "isRomanceNode": false,
+      "problems": []
     }
   ],
   "edges": [
@@ -959,6 +1127,142 @@
     [
       "en-no-seishitsu",
       "zukei-no-seishitsu"
+    ],
+    [
+      "insuu-bunkai",
+      "shiki-to-shoumei"
+    ],
+    [
+      "niji-houteishiki",
+      "fukusosuu"
+    ],
+    [
+      "hanbetsushiki",
+      "fukusosuu"
+    ],
+    [
+      "ichiji-kansuu",
+      "zukei-houteishiki"
+    ],
+    [
+      "en-no-seishitsu",
+      "zukei-houteishiki"
+    ],
+    [
+      "zukei-houteishiki",
+      "kiseki-ryoiki"
+    ],
+    [
+      "sankakuhi",
+      "sankaku-kansuu"
+    ],
+    [
+      "zukei-keiryou",
+      "sankaku-kansuu"
+    ],
+    [
+      "heihoukon",
+      "shisuu-kansuu"
+    ],
+    [
+      "shiki-to-shoumei",
+      "shisuu-kansuu"
+    ],
+    [
+      "shisuu-kansuu",
+      "taisuu-kansuu"
+    ],
+    [
+      "niji-kansuu-koukou",
+      "bibun"
+    ],
+    [
+      "shiki-to-shoumei",
+      "bibun"
+    ],
+    [
+      "bibun",
+      "sekibun"
+    ],
+    [
+      "shiki-to-shoumei",
+      "suuretsu"
+    ],
+    [
+      "data-bunseki",
+      "toukei-suisoku"
+    ],
+    [
+      "kakuritsu-koukou",
+      "toukei-suisoku"
+    ],
+    [
+      "toukei-suisoku",
+      "suugaku-shakai"
+    ],
+    [
+      "taisuu-kansuu",
+      "kansuu-kyokugen"
+    ],
+    [
+      "sankaku-kansuu",
+      "kansuu-kyokugen"
+    ],
+    [
+      "suuretsu",
+      "kansuu-kyokugen"
+    ],
+    [
+      "kansuu-kyokugen",
+      "bibun-3"
+    ],
+    [
+      "bibun",
+      "bibun-3"
+    ],
+    [
+      "bibun-3",
+      "bibun-ouyou"
+    ],
+    [
+      "bibun-3",
+      "sekibun-3"
+    ],
+    [
+      "sekibun",
+      "sekibun-3"
+    ],
+    [
+      "sekibun-3",
+      "sekibun-ouyou"
+    ],
+    [
+      "zukei-houteishiki",
+      "heimen-kyokusen"
+    ],
+    [
+      "sankaku-kansuu",
+      "heimen-kyokusen"
+    ],
+    [
+      "zukei-keiryou",
+      "vector"
+    ],
+    [
+      "sankaku-kansuu",
+      "vector"
+    ],
+    [
+      "fukusosuu",
+      "fukusosuu-heimen"
+    ],
+    [
+      "sankaku-kansuu",
+      "fukusosuu-heimen"
+    ],
+    [
+      "heimen-kyokusen",
+      "baikai-kyokuzahyou"
     ]
   ]
 }
