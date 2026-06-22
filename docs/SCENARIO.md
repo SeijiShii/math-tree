@@ -62,14 +62,14 @@
 <!-- AUTO-GENERATED:BEGIN scenario-cursor -->
 - 現在フェーズ: Phase 4 完了 → Phase 5 (公開後運用) — ゲスト専用 MVP「完成」（独自サブドメイン live + 全スモーク green）
 - 進行中ターゲット: P4.8 Promote（告知文生成）→ 公開後運用（claim/fix/revise 循環）
-- 最終更新セッション: D20260622_046_release_math-tree（favicon 再デプロイ + サブドメイン live 確認）
+- 最終更新セッション: D20260622_audit_standard（6サイクル後の鮮度監査、Crit/High 0）
 - 最終更新時刻: 2026-06-22
 - 完了フェーズ: [Phase 1, Phase 1.5 design SoT, Phase 2 機能設計, Phase 3 実装, O22(B+E)連携UI revise, Wording, full audit, standard audit(fresh), O56 favicon, Phase 4 本番デプロイ + 独自サブドメイン live]
 - 公開 URL: https://math-tree.givers.work（canonical、DNS 伝播済・配信中。raw fallback = math-tree-psi.vercel.app）
 - リポジトリ: https://github.com/SeijiShii/math-tree（public）
 - 配線済キー: DATABASE_URL + GUEST_TOKEN_SECRET（core 稼働）。空: Clerk(連携=準備中) / Anthropic(AI採点=CASで充足) / Stripe(tip-jar=VITE_ENABLE_TIPJAR で非表示)
 - post-deploy スモーク green（2026-06-22、canonical subdomain）: frontend 200 / favicon.svg 200 / manifest 200 / guest 認証 201 / 保護API 401→200
-- 次の推奨: ① P4.8 Promote（告知文生成 note/X/FB、URL=math-tree.givers.work）② [将来] Stripe live + 特商法で tip-jar 有効化（現状 VITE_ENABLE_TIPJAR 非表示でスコープ外）③ 公開後運用（claim/fix/revise）
+- 次の推奨: ① P4.45 Wording（本日6サイクルで追加した UI 文言の校正: セッション進捗/ライブスコア/習得・再挑戦パネル、Class C 人間判断）② P4.8 Promote（告知文生成 note/X/FB、URL=math-tree.givers.work）③ [将来] Stripe live + 特商法で tip-jar 有効化 ④ 公開後運用（claim/fix/revise）
 - 2026-06-22 監査+リリース: standard audit fresh（C/H 0）→ O56 favicon 配線+本番反映済 → 独自サブドメイン math-tree.givers.work live 確認（DNS 既設定）。O64 Stripe webhook は tip-jar と共に deferred
 - 2026-06-22 claim C20260622-001（本番）: テックツリーのノードクリック無反応 + ミニマップ白箱 → fix 完了・本番反映済（入口ノード unlocked 化 + onNodeClick→/learn 配線 + MiniMap 暗テーマ、127 tests green、本番でクリック→/learn 遷移を実検証）
 - 2026-06-22 claim C20260622-002（本番）: MathLive 数式フォントが /assets/fonts で 404 → fix 完了・本番反映済（フォントを public/mathlive/fonts に同梱 + fontsDirectory='/mathlive/fonts' 固定、128 tests green、本番で woff2 200 + font 読込失敗ゼロを実検証）

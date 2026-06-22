@@ -406,6 +406,7 @@ L1 設計レビュー（`SECURITY_REVIEW_20260620.md`）で High と判定され
 - **担当**: seiji
 
 ### [論点-002] 数式ステップの同値判定（自己採点の照合ロジック）
+- **status 履歴**: 2026-06-22 resolved（mathjs simplify + rationalize で多項式展開/分配を正規化 + gradeProcess で「=」チェーン途中式採点。文字列一致非依存・表現揺れ吸収。159 tests green + 本番実検証。audit 2026-06-22 reconcile）
 - **影響範囲**: learning-workbook, _shared/types（step.正規化形）, §3 NFR（照合精度）
 - **詰めるべき問い**:
   1. ユーザーの途中式（LaTeX）と模範解答ステップの**同値判定**をどう行うか（文字列一致では表現揺れに弱い）
