@@ -1,7 +1,7 @@
 # バグ修正 #C20260622-003 ドキュメントインデックス
 **issue**: C20260622-003 / problem-not-shown / 重大度: high / 実施日: 2026-06-22
-**状態**: 実装完了（2026-06-22）
-<!-- ticket-status: implemented | updated: 20260622 | ref: 101 -->
+**状態**: shipped（2026-06-22 本番反映・問題表示を実検証）
+<!-- ticket-status: shipped | updated: 20260622 | ref: 7721cb3 -->
 ## ファイル一覧
 | 番号 | ファイル |
 |---|---|
