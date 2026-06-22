@@ -75,6 +75,8 @@
 - 2026-06-22 claim C20260622-002（本番）: MathLive 数式フォントが /assets/fonts で 404 → fix 完了・本番反映済（フォントを public/mathlive/fonts に同梱 + fontsDirectory='/mathlive/fonts' 固定、128 tests green、本番で woff2 200 + font 読込失敗ゼロを実検証）
 - 2026-06-22 UI: マップ右下のミニマップ（現在地インジケータ）をユーザー要望で削除（本番反映済、Controls=ズームは維持）
 - 2026-06-22 claim C20260622-003（本番）: 学習画面で問題が表示されない → fix 完了・本番反映済（問題取得 API /api/problem[模範解答非含 SEC-002] + WorkbookView に単元名/問題文/豆知識/手がかり表示、132 tests green、本番 /learn で問題文 (-3)+5・豆知識の表示を実検証）
+- 2026-06-22 claim C20260622-004（本番）: 入力欄が分かりづらい + 途中式（=）が採点されない → fix 完了・本番反映済（gradeProcess で『計算の途中経過を=で繋いだ式』を採点[-3+5=2 / 複数チェーン]、入力欄を design-system §5 でテーマ化、142 tests green、本番 /api/grade-step で -3+5=2→正解/-3+5=3→不正解 を実検証）
+- 2026-06-22 CI: GitHub Actions ci.yml の npm ci が vitest/coverage-v8 peer 競合(ERESOLVE)で失敗し続けていた → .npmrc(legacy-peer-deps=true) で解消、CI run success(53s) を確認。ci.yml は GitHub テストのみで Vercel 非接続（CLI デプロイ運用維持）
 - 2026-06-22 Design gate: 視覚デザインレビュー green（headless playwright で全画面スクショ → screen/layout スタイル適用 + 逸脱 2 件修正: 絵文字→SVG / React Flow 暗テーマ化）。dead-class（CSS 未適用）を是正 → **本番反映済**（math-tree.givers.work で styled tech-tree + 実データ配信を視覚確認）
 - 注記: E2E(P4.5) は browser tooling での網羅自動テスト未整備（release post-deploy スモークで主要導線 green）。AI 採点は ANTHROPIC_API_KEY 注入時に有効化（現状 CAS で充足）
 <!-- AUTO-GENERATED:END scenario-cursor -->
