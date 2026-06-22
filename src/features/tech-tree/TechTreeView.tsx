@@ -1,22 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  ReactFlow,
-  Background,
-  MiniMap,
-  Controls,
-  Position,
-} from "@xyflow/react";
+import { ReactFlow, Background, Controls, Position } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import type { TechTreeGraph } from "../../types/graph";
 import { nodeVisual, NODE_TOKEN } from "../../lib/nodeStyle";
 import { layoutVertical } from "./layout";
-import {
-  canLearn,
-  learnTarget,
-  miniMapNodeColor,
-  MINIMAP_MASK_COLOR,
-} from "./nodeNav";
+import { canLearn, learnTarget } from "./nodeNav";
 import { apiFetch } from "../../lib/api/client";
 
 export function TechTreeView() {
@@ -77,14 +66,6 @@ export function TechTreeView() {
         }}
       >
         <Background />
-        <MiniMap
-          maskColor={MINIMAP_MASK_COLOR}
-          nodeColor={(n) =>
-            miniMapNodeColor((n.data as { canLearn?: boolean })?.canLearn)
-          }
-          pannable
-          zoomable
-        />
         <Controls />
       </ReactFlow>
     </div>

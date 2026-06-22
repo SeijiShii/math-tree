@@ -16,11 +16,3 @@ export function learnTarget(node: {
   if (!node.slug) return null;
   return `/learn/${node.slug}`;
 }
-
-/** MiniMap のノード色（解放=藍 / 未解放=muted、design-system トークン実値）。 */
-export function miniMapNodeColor(canLearnFlag: boolean | undefined): string {
-  return canLearnFlag ? "#3b5bdb" : "#9fb0d0";
-}
-
-/** MiniMap の暗マスク色（design-system --bg #0f1729 由来）。 */
-export const MINIMAP_MASK_COLOR = "rgba(15, 23, 41, 0.75)";

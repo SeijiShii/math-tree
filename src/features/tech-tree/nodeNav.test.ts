@@ -1,10 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  canLearn,
-  learnTarget,
-  miniMapNodeColor,
-  MINIMAP_MASK_COLOR,
-} from "./nodeNav";
+import { canLearn, learnTarget } from "./nodeNav";
 
 describe("tech-tree nodeNav（C20260622-001 ノード選択→学習遷移）", () => {
   // R4: canLearn 配線（locked のみ false）
@@ -45,12 +40,5 @@ describe("tech-tree nodeNav（C20260622-001 ノード選択→学習遷移）", 
   // R6: romance（未習得）は canLearn=false 扱いで遷移しない
   it("R6: 進めないノード（romance 未習得など canLearn=false）は遷移しない", () => {
     expect(learnTarget({ slug: "rsa", canLearn: false })).toBeNull();
-  });
-
-  // R7: MiniMap テーマ（暗マスク + 状態色）
-  it("R7: MiniMap は暗マスク + 状態色トークン（解放=藍 / 未解放=muted）", () => {
-    expect(MINIMAP_MASK_COLOR).toMatch(/rgba\(15, 23, 41/);
-    expect(miniMapNodeColor(true)).toBe("#3b5bdb");
-    expect(miniMapNodeColor(false)).toBe("#9fb0d0");
   });
 });

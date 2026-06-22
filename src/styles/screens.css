@@ -231,11 +231,6 @@
 .react-flow__controls-button svg {
   fill: var(--text);
 }
-.react-flow__minimap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-}
 .react-flow__attribution {
   background: transparent;
   color: var(--text-muted);
