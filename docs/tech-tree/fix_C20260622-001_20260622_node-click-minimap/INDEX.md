@@ -4,7 +4,7 @@
 **重大度**: high
 **実施日**: 2026-06-22
 **状態**: 実装完了（2026-06-22）
-<!-- ticket-status: implemented | updated: 20260622 | ref: 101 -->
+<!-- ticket-status: shipped | updated: 20260622 | ref: d0f9de3 -->
 
 ## ファイル一覧
 | 番号 | ファイル | 種別 | 最終更新 |
